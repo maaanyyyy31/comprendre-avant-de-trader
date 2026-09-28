@@ -1,0 +1,96 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>6. Exercices, IA et sources · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="">5. Les flux</a><a href="6.html" class="active">6. Exercices, IA et sources</a></nav></header><main id="contenu"><h1>Fin — exercices, remerciements, sources</h1>
+<h2>Exercices</h2>
+<p>Fais-les sur papier ou dans tes notes, avant de demander une correction. Aucun graphique ni compte réel n'est nécessaire. Les situations et chiffres ci-dessous sont fictifs.</p>
+<h3>1 — L'IA : poser une question utile</h3>
+<p>Tu veux comprendre pourquoi une bougie peut monter alors que beaucoup d'ordres vendeurs ont été exécutés. Écris une demande à ton IA qui précise ton niveau, le phénomène observé, ce que tu attends comme explication et la façon dont elle doit vérifier ta compréhension. Demande-lui aussi de distinguer fait observé et hypothèse. <strong>À vérifier</strong> : ta demande permet-elle une réponse autre qu'un signal d'achat ou de vente ?</p>
+<h3>2 — De la finance au trading : suivre la chaîne</h3>
+<p>Une donnée d'inflation américaine dépasse les attentes. Construis deux scénarios possibles en reliant donnée → anticipation de taux → dollar/taux → actif suivi. Pour chaque flèche, écris ce qui pourrait la contredire. <strong>À vérifier</strong> : tu as formulé des hypothèses, pas une certitude sur le prochain prix.</p>
+<h3>3 — La mécanique des prix : effort et résultat</h3>
+<p>Au bord haut d'une zone de valeur, des achats market se répètent, le delta est positif, mais les bougies clôturées n'avancent plus. Nomme le phénomène possible. Quelles observations te feraient abandonner cette lecture ? Dans quel ordre regarderais-tu contexte, niveau et confirmation ? <strong>À vérifier</strong> : un delta positif seul ne devient pas un ordre de vendre.</p>
+<h3>4 — Maths et risque : calculer avant d'agir</h3>
+<p>Sur 20 trades fictifs, 8 gagnent 1,5R et 12 perdent 1R. Calcule l'espérance brute par trade, puis recommence avec 0,1R de frais par trade. Si ton environnement impose une limite de perte, explique pourquoi une espérance positive ne garantit pas de survivre à une série de pertes. <strong>Repère de correction</strong> : 0R avant frais, −0,1R après frais.</p>
+<h3>5 — Les flux : confronter deux lectures</h3>
+<p>Un prix arrive sur un POC de la veille. Un outil estime un gamma positif, mais le prix clôture au-dessus et les achats exécutés continuent. Écris d'abord ce que le POC et le gamma suggéraient, puis ce que le flux montre réellement. Quelle observation te ferait renoncer à un retour vers la valeur ? <strong>À vérifier</strong> : une estimation GEX ne remplace ni la clôture ni le flux exécuté.</p>
+<p>Si tu bloques, note exactement où. C'est une meilleure question pour ton IA qu'une réponse inventée après coup.</p>
+<h2>Le prompt « apprends avec ton IA »</h2>
+<p>Copie ce texte dans l'IA que tu utilises. Tu peux lui donner cette ressource comme contexte ; si elle ne l'a pas, elle doit te demander le passage utile. Aucun réglage technique n'est nécessaire pour commencer.</p>
+<pre><code>
+Je veux apprendre cette introduction au trading, pas recevoir des signaux.
+
+Interroge-moi en français simple, une question à la fois, sur ses cinq parties :
+
+1. IA, 2. finance et trading, 3. mécanique des prix, 4. maths et risque,
+
+5. flux, volatilité et options.
+
+
+
+Commence par me demander quelle partie j&#x27;ai lue et ce que je crois avoir compris.
+
+Laisse-moi répondre avant de donner une définition, une hiérarchie ou la solution.
+
+Après ma réponse, indique ce qui est juste, ce qui manque et ce qui reste une
+
+hypothèse. Appuie-toi uniquement sur le passage que je t&#x27;ai fourni ; si tu ne
+
+l&#x27;as pas, demande-le-moi au lieu d&#x27;inventer. Pose ensuite une courte situation
+
+à interpréter, puis demande ce qui invaliderait mon interprétation.
+
+
+
+Pour les calculs, fais-moi poser la formule, vérifier les unités et inclure les
+
+frais. Pour les marchés, sépare observation, interprétation et décision.
+
+Ne promets jamais un résultat ni un taux de réussite. À la fin, demande-moi où
+
+cette compréhension pourrait changer une décision, ou pourquoi nulle part encore.
+
+Termine par deux points à revoir, sans note ni classement.
+
+</code></pre>
+<h2>Merci</h2>
+<p>Si tu es arrivé jusqu'ici, tu as lu ce que la plupart des gens ne liront jamais : ils veulent des signaux, pas des mécanismes. Tu viens de faire l'inverse. Merci pour le temps que tu y as passé.</p>
+<p>Ce document est gratuit et le restera. Il n'y a rien à acheter pour en profiter, et tout ce qui est écrit dedans est utilisable tel quel.</p>
+<p>Pour ceux qui veulent aller plus loin, je prépare <strong>Learning</strong> : un parcours pour apprendre cette ressource avec ton IA, notion par notion, au lieu de la lire une fois et de l'oublier. Il n'est pas encore sorti. Ceux qui ont terminé cette ressource auront une réduction au lancement ; l'annonce se fera sur le Discord.</p>
+<h2 id="sources">Sources</h2>
+<p><strong>Partie 1 — l'IA</strong></p>
+<ul>
+<li>Addy Osmani, <em>Beyond Vibe Coding</em> (problème des 70 %, contexte, planification, itération, gestion de la mémoire et de la confiance).</li>
+<li>Rick Dakan, Joseph Feller et Anthropic, <em>AI Fluency: Framework and Foundations</em> (délégation, description, discernement, diligence).</li>
+<li>Bobby Trading, série d'initiation, partie 3 (pas de bot, pas de signaux).</li>
+</ul>
+<p><strong>Partie 2 — de la finance au trading</strong></p>
+<ul>
+<li>20 Minute University, « All of Economics » (rareté, marchés, monnaie, inflation, taux).</li>
+<li>MenthorQ, approche macro top-down vers les actions.</li>
+<li>Morgan Housel, <em>The Psychology of Money</em>.</li>
+<li>Bobby Trading, série d'initiation (marchés et produits, analyse technique, psychologie et money management).</li>
+</ul>
+<p><strong>Partie 3 — la mécanique des prix</strong></p>
+<ul>
+<li>Bobby Trading, « 30 minutes pour apprendre à trader avec l'order flow ».</li>
+<li>GexDash / The Hub, modules <em>Order Flow — Les Fondamentaux</em> et <em>Volume Profile & VWAP</em>.</li>
+<li>Captures personnelles sur GC, CL et 6E.</li>
+</ul>
+<p><strong>Partie 4 — maths, risque, edge et système</strong></p>
+<ul>
+<li>Roan (@RohOnChain), publication sur les mathématiques du trading.</li>
+<li>Fabervaale, protocole de gestion du risque par environnement (prop firm, compétition, compte personnel).</li>
+<li>Bobby Trading, partie 3 (money management).</li>
+</ul>
+<p><strong>Partie 5 — les flux</strong></p>
+<ul>
+<li>S&P Dow Jones Indices, communiqués trimestriels sur les rachats d'actions du S&P 500 (1 020 Md$ sur 12 mois à fin septembre 2025).</li>
+<li>Société Générale, suivi de l'industrie CTA (environ 340 Md$ d'encours).</li>
+<li>OCC, volumes d'options 2025 (15,2 milliards de contrats).</li>
+<li>Cboe, volumes 2025 et part du 0DTE sur le SPX (59 %).</li>
+<li>Cboe Market Intelligence, <em>Crossed Wires: Separating Perception from Reality</em> (tailles réellement traitées en 0DTE par les particuliers).</li>
+<li>John Hull, <em>Options, Futures et autres actifs dérivés</em> (définitions et greeks).</li>
+<li>VolSignals, réserve sur la convention de signe des niveaux GEX.</li>
+</ul>
+<p><strong>Pour aller plus loin</strong></p>
+<ul>
+<li>Proposition, choisie parmi les sources déjà utilisées (3 à 5 maximum) : Bobby Trading, « 30 minutes pour apprendre à trader avec l'order flow » ; GexDash, <em>Volume Profile & VWAP</em> ; John Hull, <em>Options, Futures et autres actifs dérivés</em> ; Morgan Housel, <em>The Psychology of Money</em>.</li>
+</ul><div class="pager"><a href="5.html">← Partie précédente</a><span></span></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script></body></html>

@@ -1,0 +1,147 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>5. Les flux · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="active">5. Les flux</a><a href="6.html" class="">6. Exercices, IA et sources</a></nav></header><main id="contenu"><h1>5. Les flux : ce qui pousse le marché en dehors du graphique</h1>
+<p>🟡 → 🔴 · Quatre notions, dans l'ordre : les flux et la macro · la dispersion · la volatilité · les options</p>
+<h2>Ce que tu sauras faire</h2>
+<ul>
+<li>Savoir qui achète et qui vend en permanence, sans regarder le prix.</li>
+<li>Comprendre pourquoi tous les indices ne montent pas ensemble, et ce que ça t'apprend.</li>
+<li>Lire la volatilité comme une amplitude, pas comme une prédiction.</li>
+<li>Expliquer ce qu'est un call, un put, et pourquoi les options pèsent sur l'ES et le NQ.</li>
+</ul>
+<h2>Définitions</h2>
+<ul>
+<li><strong>Produit financier</strong> = un contrat qu'on peut acheter et vendre sur un marché. Une action, un future, une option : trois produits différents, avec des règles différentes.</li>
+<li><strong>Future (contrat à terme)</strong> = un engagement à acheter ou vendre une quantité fixée d'un actif, à une date fixée, à un prix fixé aujourd'hui. Les deux parties sont tenues. C'est ce que tu trades sur l'ES, le NQ, le CL ou le GC ; ça se règle en cash, tu ne reçois jamais de barils.</li>
+<li><strong>Option</strong> = un contrat qui donne le <strong>droit</strong>, sans l'obligation, d'acheter ou de vendre un actif à un prix fixé, jusqu'à une date fixée. Toute la différence avec le future est là.</li>
+<li><strong>Call</strong> = le droit d'acheter. Tu en achètes un si tu penses que ça va monter.</li>
+<li><strong>Put</strong> = le droit de vendre. Tu en achètes un si tu penses que ça va baisser, ou pour te protéger d'une baisse.</li>
+<li><strong>Strike</strong> = le prix fixé dans le contrat. <strong>Échéance</strong> = la date limite. <strong>Prime</strong> = le prix de l'option.</li>
+<li><strong>0DTE</strong> = une option qui expire le jour même.</li>
+<li><strong>Sous-jacent</strong> = l'actif sur lequel porte le contrat (le S&P 500, le Nasdaq, l'or…).</li>
+<li><strong>Volatilité</strong> = de combien le prix varie par rapport à sa moyenne. Une amplitude, pas un « mouvement anormal ».</li>
+<li><strong>Volatilité implicite</strong> = l'amplitude que le prix des options anticipe. Le <strong>VIX</strong> = la volatilité implicite à 30 jours des options sur le S&P 500.</li>
+<li><strong>Dealer</strong> (market maker) = celui qui se met en face des clients sur les options, et couvre son risque sur le sous-jacent.</li>
+<li><strong>CTA</strong> = un fonds qui suit la tendance avec des règles automatiques.</li>
+</ul>
+<hr>
+<h2>Notion 1 — Les flux : qui achète, et pourquoi</h2>
+<h3>La théorie</h3>
+<p>Tu as vu dans la partie 2 la chaîne macro : une information change les attentes, les attentes changent les décisions d'achat et de vente, et les prix bougent. Souvent, ça passe par les taux et le dollar avant d'arriver aux indices. C'est le décor.</p>
+<p>Mais il y a plus bête, et plus régulier : une partie des achats et des ventes n'a rien à voir avec une opinion sur le marché. Elle est mécanique ; elle a lieu de toute façon.</p>
+<p><strong>L'épargne salariale.</strong> Des millions de salariés américains versent une partie de leur salaire sur un plan d'épargne retraite, à chaque paie. Cet argent achète des parts de fonds indiciels, qui achètent des actions du S&P 500, quel que soit le prix. Personne ne se demande si c'est cher. C'est automatique, et ça tombe toutes les deux semaines.</p>
+<p><strong>Les fonds de pension.</strong> Ils gèrent les retraites avec une répartition cible, disons 60 % d'actions et 40 % d'obligations. Les actions montent beaucoup ? Leur poids dépasse la cible, donc le fonds vend des actions pour revenir à 60 %. Elles chutent ? Il en rachète. Ces rééquilibrages, souvent en fin de trimestre, vont donc contre le mouvement récent.</p>
+<p><strong>Les rachats d'actions (buybacks).</strong> Une entreprise qui a de la trésorerie peut racheter ses propres actions sur le marché. Moins d'actions en circulation = plus de bénéfice par action, mécaniquement. Sur les douze mois à fin septembre 2025, les entreprises du S&P 500 ont racheté pour 1 020 milliards de dollars de leurs propres actions. C'est un acheteur énorme, permanent, insensible au prix ; qui se met quand même en pause dans les semaines qui précèdent la publication des résultats.</p>
+<p>D'où le biais haussier structurel des indices : en face, il y a un flux acheteur qui ne dépend pas du marché. Ce n'est pas une garantie que ça monte ; c'est un vent de dos.</p>
+<h3>La pratique</h3>
+<p>Et les CTA ? On les cite souvent avec les précédents, à tort.</p>
+<p>Un CTA suit la tendance, avec des règles automatiques : prix au-dessus de ses moyennes longues, il achète ; la tendance casse, il vend. L'industrie pèse environ 340 milliards de dollars, dominée par ces stratégies de suivi de tendance.</p>
+<p>Donc un CTA n'est pas un acheteur structurel ; c'est un amplificateur, dans les deux sens. En marché haussier, il achète ce qui monte. En marché baissier, il vend ce qui baisse, et il accélère la chute. Les banques publient des estimations des niveaux où ces fonds basculent d'acheteur à vendeur. Ce sont des estimations ; pour autant, quand un gros niveau technique est aussi un seuil de bascule, les mouvements sont plus violents.</p>
+<p>Ce que tu en fais concrètement :</p>
+<ul>
+<li><strong>Tu ne trades pas ces flux</strong>, tu sais qu'ils existent. On anticipe rien du tout ; ça explique juste pourquoi un marché monte « sans raison » pendant des semaines, et pourquoi il chute si vite quand la tendance casse.</li>
+<li><strong>Tu regardes le calendrier.</strong> Une fin de trimestre, une grosse échéance, une période de rachats à l'arrêt : les journées ne se ressemblent pas.</li>
+<li><strong>Tu te méfies des explications d'après coup.</strong> Le prix bouge souvent pour des raisons de plomberie, pas pour le titre de l'article du soir.</li>
+</ul>
+<p>Ces flux ne tombent pas partout pareil. Certains morceaux du marché en reçoivent plus que d'autres ; et ça, ça se voit.</p>
+<hr>
+<h2>Notion 2 — La dispersion</h2>
+<h3>La théorie</h3>
+<p>Un indice n'est pas un bloc : c'est un panier, avec des poids très inégaux. Le Nasdaq est dominé par une poignée de très grosses valeurs technologiques ; le S&P 500 est plus large ; le Russell rassemble des petites entreprises, plus sensibles au coût du crédit.</p>
+<p>La dispersion = l'écart entre ces morceaux. Tout monte, mais pas au même rythme. Ou alors l'indice monte pendant que la moitié de ses composants baisse.</p>
+<p>C'est une information, parce que l'indice, lui, ne te le dit pas.</p>
+<h3>La pratique</h3>
+<p>Trois lectures simples, 30 secondes avant la séance :</p>
+<ul>
+<li><strong>NQ contre ES.</strong> Lequel est le plus fort aujourd'hui ? En général, on préfère acheter le plus fort et vendre le plus faible. Et quand l'un casse un plus haut sans l'autre, la cassure est fragile.</li>
+<li><strong>Les secteurs porteurs.</strong> Le NQ monte alors que les semi-conducteurs (SMH) et les plus grosses valeurs baissent ? C'est une hausse orpheline ; ce sont les poids lourds qui font l'indice, pas la moyenne des petites lignes.</li>
+<li><strong>Est-ce que ça monte ensemble ?</strong> Un marché où tout monte est plus solide qu'un marché porté par trois titres.</li>
+</ul>
+<p>C'est la même logique qu'en partie 3 : chercher la cohérence, et surtout repérer la divergence entre ce que fait le prix et ce qui le compose.</p>
+<p>Tu sais qui pousse, et sur quoi. Reste une question : de combien ça peut bouger ?</p>
+<hr>
+<h2>Notion 3 — La volatilité</h2>
+<h3>La théorie</h3>
+<p>Volatilité = de combien le prix varie par rapport à sa moyenne. C'est une amplitude, pas une direction : elle répond à « de combien ça bouge », jamais à « dans quel sens ».</p>
+<p>On en distingue deux :</p>
+<ul>
+<li><strong>la volatilité réalisée</strong> : de combien ça a bougé, mesuré sur le passé ;</li>
+<li><strong>la volatilité implicite</strong> : de combien le marché s'attend à ce que ça bouge, lue dans le prix des options.</li>
+</ul>
+<p>Le VIX, c'est la volatilité implicite à 30 jours sur le S&P 500. On l'appelle l'indice de la peur, parce qu'il monte quand les investisseurs paient cher pour se protéger. Il a des cousins : le <strong>VXN</strong> pour le Nasdaq, le <strong>VIX9D</strong> sur 9 jours (plus nerveux, utile autour des annonces), et le <strong>VVIX</strong>, la volatilité du VIX lui-même.</p>
+<p>Un VIX élevé ne dit pas que ça va baisser. Il dit que les mouvements attendus sont plus grands, dans les deux sens.</p>
+<h3>La pratique</h3>
+<p>La volatilité pilote ta taille de position ; pas ton sens.</p>
+<ul>
+<li><strong>VIX bas, marché calme</strong> : les mouvements sont petits. Tes cibles doivent être plus proches, et une cassure a plus de chances d'échouer.</li>
+<li><strong>VIX qui monte fort</strong> : les mouvements s'élargissent. Ton stop doit être plus large, donc ta taille plus petite, pour risquer la même chose (partie 4). Le même setup, avec le même stop en points, ne représente pas le même risque selon le régime.</li>
+<li><strong>VIX très haut, puis qui retombe</strong> : c'est souvent le vrai signal de reprise du risque, plus que le prix lui-même.</li>
+</ul>
+<p>C'est pour ça qu'une même stratégie varie selon l'actif, la volatilité et le contexte ; ça se backteste.</p>
+<p>Et un réflexe à prendre : avant une grosse annonce, la volatilité implicite est déjà chère. Le marché a déjà payé pour l'événement. D'où le fait qu'on peut avoir raison sur la nouvelle, et perdre quand même.</p>
+<p>Cette volatilité implicite, on l'a lue dans le prix des options. Et les options, c'est probablement le plus gros acteur invisible de ta séance.</p>
+<hr>
+<h2>Notion 4 — Les options</h2>
+<h3>La théorie</h3>
+<p>Reprenons les pommes. Tu fais des tartes, et tu as peur que le prix des pommes monte cet hiver. Tu vas voir un producteur : je te paie 5 € aujourd'hui, et en échange, jusqu'au 31 décembre, j'ai le droit de t'acheter 100 kg à 1 € le kilo, quel que soit le prix du marché.</p>
+<ul>
+<li>Les pommes montent à 1,50 € : tu utilises ton droit, tu achètes à 1 € ce qui en vaut 1,50. Tu gagnes 50 €, moins les 5 € payés.</li>
+<li>Les pommes restent à 1 € ou baissent : tu n'utilises pas ton droit. Tu as perdu 5 €, et c'est tout.</li>
+</ul>
+<p>Tu viens d'acheter un <strong>call</strong>. Le producteur, lui, a <strong>vendu</strong> le call : il a encaissé 5 €, et il a l'obligation de te vendre à 1 € si tu le demandes. Le <strong>put</strong>, c'est l'inverse : le producteur paie pour avoir le droit de vendre à 1 €, même si le marché tombe à 0,50 €. C'est une assurance.</p>
+<p>Deux choses à retenir :</p>
+<ul>
+<li>l'acheteur risque la prime ; le vendeur risque beaucoup plus ;</li>
+<li>une option perd de la valeur avec le temps. C'est un pari sur un mouvement, et sur un délai.</li>
+</ul>
+<p>Les <strong>greeks</strong> = les chiffres qui disent comment le prix d'une option réagit. Deux suffisent pour nous :</p>
+<ul>
+<li><strong>le delta</strong> : de combien bouge l'option quand le sous-jacent bouge de 1. Proche de 0 si le strike est loin, autour de 0,5 si le strike est sur le prix, proche de 1 si l'option est déjà largement gagnante ;</li>
+<li><strong>le gamma</strong> : de combien bouge le delta. Il est maximum quand le strike est proche du prix, et il explose à l'approche de l'échéance. D'où l'importance du 0DTE.</li>
+</ul>
+<p><em>(Les deux autres, pour ta culture : le <strong>theta</strong>, ce que coûte chaque jour qui passe, et le <strong>vega</strong>, ce que pèse la volatilité implicite.)</em></p>
+<figure id="figure-8" class="figure anim" data-state="4"><figcaption>Figure 8 · Delta et échéance</figcaption><div class="scene-wrap"><svg class="scene" viewBox="0 0 640 240" role="img" aria-label="Le delta d'un call selon le prix, plus raide quand l'échéance approche"><defs><marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="tete"/></marker></defs><line x1="50" y1="205" x2="620" y2="205" class="grille k1"/><line x1="50" y1="30" x2="50" y2="205" class="grille k1"/><text x="620" y="225" class="doux k1" font-size="12" text-anchor="end">prix du sous-jacent</text><text x="56" y="26" class="doux k1" font-size="12" text-anchor="start">delta du call (0 → 1)</text><line x1="330" y1="30" x2="330" y2="205" class="repere k1"/><text x="336" y="44" class="or k1" font-size="12" text-anchor="start">strike</text><polyline points="60,196.7 70,196.2 80,195.6 90,195.0 100,194.2 110,193.4 120,192.4 130,191.3 140,190.1 150,188.6 160,187.0 170,185.2 180,183.2 190,180.9 200,178.4 210,175.6 220,172.5 230,169.1 240,165.3 250,161.3 260,157.0 270,152.3 280,147.4 290,142.3 300,136.9 310,131.4 320,125.7 330,120.0 340,114.3 350,108.6 360,103.1 370,97.7 380,92.6 390,87.7 400,83.0 410,78.7 420,74.7 430,70.9 440,67.5 450,64.4 460,61.6 470,59.1 480,56.8 490,54.8 500,53.0 510,51.4 520,49.9 530,48.7 540,47.6 550,46.6 560,45.8 570,45.0 580,44.4 590,43.8 600,43.3 610,42.9" class="prix draw k2" pathLength="1" fill="none"/><text x="90" y="180" class="k1" font-size="13" text-anchor="start">loin : delta ≈ 0</text><text x="345" y="125" class="k2" font-size="13" text-anchor="start">près : il varie vite</text><polyline points="60,200.0 70,200.0 80,200.0 90,200.0 100,200.0 110,200.0 120,200.0 130,200.0 140,200.0 150,200.0 160,200.0 170,200.0 180,200.0 190,199.9 200,199.9 210,199.8 220,199.6 230,199.4 240,198.9 250,198.1 260,196.8 270,194.5 280,190.6 290,184.4 300,174.6 310,160.4 320,141.7 330,120.0 340,98.3 350,79.6 360,65.4 370,55.6 380,49.4 390,45.5 400,43.2 410,41.9 420,41.1 430,40.6 440,40.4 450,40.2 460,40.1 470,40.1 480,40.0 490,40.0 500,40.0 510,40.0 520,40.0 530,40.0 540,40.0 550,40.0 560,40.0 570,40.0 580,40.0 590,40.0 600,40.0 610,40.0" class="vwap draw k3" pathLength="1" fill="none"/><text x="318" y="55" class="or k3" font-size="13" text-anchor="end">échéance proche</text><text x="620" y="150" class="doux k4" font-size="12" text-anchor="end">dépend aussi de la volatilité</text></svg></div><ol><li><span class="step">01</span><strong>Loin du strike</strong><p>Le delta d’un call peut être proche de zéro.</p></li><li><span class="step">02</span><strong>Près du strike</strong><p>Le delta varie davantage quand le prix bouge.</p></li><li><span class="step">03</span><strong>Échéance proche</strong><p>Cette variation peut devenir plus rapide.</p></li><li><span class="step">04</span><strong>Limite</strong><p>La courbe dépend aussi du contrat et de la volatilité.</p></li></ol><button type="button" class="rejouer">↻ Rejouer</button><small>Schéma pédagogique fictif · les vignettes s’allument avec l’animation</small></figure>
+<p>Ce que ça pèse aujourd'hui : en 2025, 15,2 milliards de contrats d'options ont été échangés aux États-Unis, 26 % de plus qu'en 2024. Sur les options du S&P 500, 59 % du volume porte sur des options qui expirent le jour même. Ce n'est plus un marché de niche.</p>
+<h3>La pratique</h3>
+<p>Pourquoi ça nous concerne, nous qui tradons des futures ?</p>
+<p>Quand un particulier achète un call, quelqu'un le lui vend ; souvent un dealer. Le dealer ne veut pas parier, il veut encaisser l'écart entre l'achat et la vente. Donc il couvre sa position sur le sous-jacent, en achetant ou en vendant des futures. Et comme le delta bouge avec le prix, il doit réajuster en permanence.</p>
+<ul>
+<li><strong>Dealers en gamma positif</strong> : le prix monte, ils vendent ; le prix baisse, ils achètent. Ils freinent. Journée d'équilibre, cassures qui s'essoufflent.</li>
+<li><strong>Dealers en gamma négatif</strong> : le prix monte, ils achètent ; le prix baisse, ils vendent. Ils accélèrent. Journée de déséquilibre, mouvements plus violents.</li>
+</ul>
+<p>Le niveau où l'on passe de l'un à l'autre s'appelle le <strong>zero gamma</strong>. Autour, c'est instable.</p>
+<figure id="figure-9" class="figure anim" data-state="4"><figcaption>Figure 9 · L’interrupteur de régime</figcaption><div class="scene-wrap"><svg class="scene" viewBox="0 0 640 240" role="img" aria-label="Même impulsion : ramenée en gamma positif, instable à la bascule, amplifiée en gamma négatif"><defs><marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="tete"/></marker></defs><line x1="30" y1="130" x2="620" y2="130" class="repere k1"/><text x="30" y="122" class="or k1" font-size="12" text-anchor="start">niveau</text><polyline points="60,150 160,125 260,90" class="prix draw k1" pathLength="1" fill="none"/><text x="150" y="100" class="k1" font-size="13" text-anchor="start">même impulsion</text><polyline points="260,90 340,110 430,124 520,130 610,131" class="up-l draw only2" pathLength="1" fill="none"/><text x="430" y="160" class="up only2" font-size="14" text-anchor="start">la couverture freine</text><polyline points="260,90 320,120 380,82 440,125 500,88 560,120 610,100" class="or-l draw only3" pathLength="1" fill="none"/><text x="430" y="160" class="or only3" font-size="14" text-anchor="start">instable</text><polyline points="260,90 360,62 470,38 610,18" class="dn-l draw only4" pathLength="1" fill="none"/><text x="430" y="80" class="dn only4" font-size="14" text-anchor="start">la couverture accélère</text></svg></div><div class="choix"><button type="button" data-goto="2">Gamma positif</button><button type="button" data-goto="3">À la bascule</button><button type="button" data-goto="4">Gamma négatif</button></div><ol><li><span class="step">01</span><strong>Même impulsion</strong><p>On imagine un prix qui monte depuis le même niveau.</p></li><li><span class="step">02</span><strong>Gamma positif</strong><p>La couverture peut vendre la hausse et freiner.</p></li><li><span class="step">03</span><strong>À la bascule</strong><p>Le comportement est incertain ; on évite la certitude.</p></li><li><span class="step">04</span><strong>Gamma négatif</strong><p>La couverture peut acheter la hausse et l’amplifier.</p></li></ol><button type="button" class="rejouer">↻ Rejouer</button><small>Schéma pédagogique fictif · les vignettes s’allument avec l’animation</small></figure>
+<p>Ça te rappelle quelque chose ? C'est la partie 3. Un dealer en gamma positif qui vend chaque hausse, c'est un vendeur limit qui absorbe. Un dealer en gamma négatif qui achète chaque hausse, c'est un acheteur market de plus. Les options n'inventent pas une autre mécanique de prix ; elles ajoutent des acteurs, avec des obligations connues, dans la même enchère. 1 achat = 1 vente, toujours.</p>
+<p>Comment on s'en sert ? Dans l'ordre de la partie 3 : contexte, niveau, flux.</p>
+<ol>
+<li><strong>Le contexte.</strong> Une question le matin : aujourd'hui, les dealers freinent ou accélèrent ? Gamma positif, on privilégie le retour vers la valeur (VWAP, POC). Gamma négatif, on privilégie les cassures, et on réduit la taille. Quand ce biais dit la même chose que ton volume profile, c'est une confluence. Quand il dit l'inverse, c'est aussi une information : moins de conviction, moins de taille.</li>
+<li><strong>Le niveau.</strong> Le <strong>GEX</strong> (gamma exposure) estime, strike par strike, combien de gamma les dealers portent, et en tire des niveaux. C'est un niveau de plus sur ta carte ; il vaut surtout quand il tombe au même endroit qu'un POC ou une VWAP.</li>
+<li><strong>Le flux.</strong> Au contact, rien ne change : tu lis l'absorption. Un niveau GEX sans absorption ne vaut rien.</li>
+</ol>
+<blockquote>
+<p><strong>La carte n'est pas le territoire</strong></p>
+<p>Personne ne connaît la vraie position des dealers. Les outils GEX <em>supposent</em> qui a acheté et qui a vendu chaque option. Des spécialistes des flux, comme VolSignals, contestent cette convention : le mécanisme de couverture est réel, mais le signe des niveaux calculés peut être faux. Retiens le mécanisme ; méfie-toi des niveaux affichés au point près.</p>
+</blockquote>
+<blockquote>
+<p>[!important] Rien de magique dans les options</p>
+<p>Elles ne sont pas nécessaires pour être rentable. Beaucoup de traders gagnent leur vie sans jamais regarder une carte gamma. Elles ajoutent une couche de contexte ; pas un point d'entrée, pas une garantie. Si tu n'as pas encore un système qui marche sur le prix, le volume et le flux, commence par là. Les options viendront après, ou jamais, et ce sera très bien aussi.</p>
+</blockquote>
+<h2>Exemples</h2>
+<p><strong>Petit calcul pour fixer les idées.</strong> Le NQ est à 20 000. Tu achètes un call de strike 20 100 qui expire ce soir, pour une prime de 20 points.</p>
+<ul>
+<li>Le NQ finit à 20 200 : ton call vaut 100 points. Gain : 80 points.</li>
+<li>Le NQ finit à 20 050 : ton call ne vaut rien. Perte : 20 points, la prime, et pas un de plus.</li>
+<li>Le NQ finit à 20 120 : ton call vaut 20 points. Tu as eu raison sur le sens, et tu n'as rien gagné.</li>
+</ul>
+<p>Ce dernier cas, c'est toute la difficulté des options : il faut avoir raison sur le sens, sur l'ampleur, et sur le délai.</p>
+<h2>Erreurs fréquentes</h2>
+<ul>
+<li><strong>Croire qu'il faut trader des options pour s'en servir.</strong> Leur lecture suffit.</li>
+<li><strong>Confondre les flux mécaniques et les CTA.</strong> Les premiers sont réguliers et insensibles au prix ; les CTA suivent la tendance, donc vendent en marché baissier.</li>
+<li><strong>Prendre un niveau GEX pour un support garanti.</strong> C'est une estimation.</li>
+<li><strong>Lire un VIX qui monte comme un signal de baisse.</strong> C'est un signal d'amplitude.</li>
+<li><strong>Acheter des options juste avant une annonce.</strong> La protection est déjà chère.</li>
+<li><strong>Croire que tout ça est nécessaire pour être rentable.</strong></li>
+</ul>
+<h2>Transition vers la fin</h2>
+<p>Tu sais comment le prix bouge et où il se juge juste (partie 3), comment mesurer si ce que tu fais marche (partie 4), et qui pousse en dehors du graphique (partie 5). C'est une introduction : l'essentiel est là, le reste c'est à toi de creuser, et de la pratique. Les exercices qui suivent sont faits pour ça, et ton IA de la partie 1 peut te les corriger.</p>
+<hr>
+<div class="pager"><a href="4.html">← Partie précédente</a><a href="6.html">Partie suivante →</a></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script></body></html>

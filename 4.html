@@ -1,0 +1,164 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>4. Maths, risque, edge et système · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="active">4. Maths, risque, edge et système</a><a href="5.html" class="">5. Les flux</a><a href="6.html" class="">6. Exercices, IA et sources</a></nav></header><main id="contenu"><h1>4. Maths, risque, edge et système</h1>
+<p>🔴 · Cinq notions, dans l'ordre : l'espérance · le drawdown et le risque · la géométrie du risque en prop · construire un edge · le système avant la psychologie</p>
+<h2>Ce que tu sauras faire</h2>
+<ul>
+<li>Juger une stratégie avec les bons chiffres (espérance, drawdown), pas avec son seul taux de réussite.</li>
+<li>Calculer le taux de réussite minimum qu'exige ta cible.</li>
+<li>Savoir ce qu'un backtest prouve, et ce qu'il ne prouve pas.</li>
+<li>Écrire ta stratégie sous forme de règles qu'on peut tester.</li>
+</ul>
+<h2>Définitions</h2>
+<p>Tu n'as pas besoin de plus pour commencer. Et c'est sur ces calculs que l'IA est meilleure que nous : donne-lui ton journal de trading, demande-lui ces chiffres.</p>
+<ul>
+<li><strong>R</strong> = ce que tu risques sur un trade, la perte si ton stop est touché. On compte ses résultats en R (+2R, −1R) ; ça permet de comparer des trades de tailles différentes. 1R = 1R.</li>
+<li><strong>Ratio (RR)</strong> = la cible divisée par le risque. Viser deux fois ce que tu risques = 2R.</li>
+<li><strong>Taux de réussite (winrate)</strong> = la part de trades gagnants.</li>
+<li><strong>Seuil de rentabilité</strong> = le taux de réussite minimum pour ne pas perdre d'argent, frais exclus.</li>
+<li><strong>Probabilité</strong> = la fréquence d'un événement si on répète l'expérience un grand nombre de fois. Une pièce tombe sur pile une fois sur deux ; pas une fois sur deux à chaque paire de lancers.</li>
+<li><strong>Probabilité conditionnelle</strong> = la probabilité d'un événement <em>sachant</em> qu'une condition est remplie.</li>
+<li><strong>Espérance (EV)</strong> = ce qu'une stratégie rapporte en moyenne par trade, sur un grand nombre de trades.</li>
+<li><strong>EV+ / EV−</strong> = espérance positive / négative.</li>
+<li><strong>Edge</strong> = un avantage statistique : une suite de trades EV+, qui tient après les frais, sur assez de trades.</li>
+<li><strong>Moyenne</strong> = la somme des résultats divisée par leur nombre. <strong>Médiane</strong> = le résultat du milieu, quand on les range dans l'ordre.</li>
+<li><strong>Écart-type</strong> = de combien tes résultats s'écartent en général de leur moyenne. <strong>Variance</strong> = l'écart-type au carré ; c'est la même idée.</li>
+<li><strong>Drawdown (DD)</strong> = la baisse du capital depuis son dernier plus haut. Le <strong>DD max</strong> = la pire de ces baisses sur la période.</li>
+<li><strong>Risque de ruine</strong> = la probabilité de perdre assez pour ne plus pouvoir trader. En prop firm, la ruine = toucher la limite de perte du compte.</li>
+<li><strong>Backtest (BT)</strong> = appliquer tes règles au passé pour voir ce qu'elles auraient donné.</li>
+<li><strong>Échantillon</strong> = les trades sur lesquels tu mesures.</li>
+<li><strong>Surapprentissage</strong> = régler une stratégie jusqu'à ce qu'elle colle parfaitement au passé. Elle a appris le bruit, pas le marché.</li>
+<li><strong>Non-stationnarité</strong> = le marché change de régime (calme, volatil, tendance, range) ; les stats d'hier ne sont pas garanties demain.</li>
+<li><strong>Monte Carlo</strong> = mélanger des milliers de fois l'ordre de tes trades passés, pour voir tous les chemins possibles avec le même edge.</li>
+<li><strong>Erreur d'estimation</strong> = l'écart entre le chiffre que tu as mesuré et le vrai chiffre, que tu ne connaîtras jamais.</li>
+</ul>
+<hr>
+<h2>Notion 1 — L'espérance</h2>
+<h3>La théorie</h3>
+<p>Chaque trade, ce sont des maths exécutées. L'entrée est une probabilité conditionnelle ; la validation, des statistiques ; la taille de position, une optimisation ; le risque, une mesure.</p>
+<p>Le jeu est binaire : le prix va soit en haut, soit en bas. Donc on ne gagne pas en ayant raison sur chaque trade. On gagne en ayant une stratégie statistiquement favorable, sur des centaines de trades.</p>
+<p>Le chiffre qui dit ça, c'est l'espérance :</p>
+<p><strong>espérance = (taux de réussite × gain moyen) − (taux d'échec × perte moyenne)</strong></p>
+<p>Si tu ne retiens qu'une formule de toute la partie, c'est celle-là.</p>
+<p>Un trade EV+, c'est un trade dont on attend un gain moyen positif si on le répète des centaines de fois. Même s'il perd souvent ; même s'il perd celui-là. Un trade EV−, c'est l'inverse : la répétition te fait perdre, même si tu gagnes de temps en temps.</p>
+<p>Et le seuil de rentabilité découle directement de ta cible :</p>
+<p><strong>seuil = 1 ÷ (1 + ratio)</strong></p>
+<p>À 0,5R il faut gagner 67 % du temps ; à 1R, 50 % ; à 2R, 33 % ; à 3R, 25 %.</p>
+<h3>La pratique</h3>
+<p>Le taux de réussite n'est pas la métrique reine ; l'espérance l'est.</p>
+<p>Un jeu qui paie +120 $ 40 % du temps et −50 $ 60 % du temps, ça donne 0,40 × 120 − 0,60 × 50 = +18 $ par tentative, avant frais. Tu y perds plus souvent que tu n'y gagnes, et c'est rentable.</p>
+<p>La probabilité conditionnelle, c'est l'amélioration la plus négligée. Un setup qui gagne 55 % du temps en général peut gagner nettement plus dans un contexte précis : dans la tendance, sur une zone, avec une confirmation. C'est exactement ce que font tes confluences de la partie 3 ; chacune est une condition.</p>
+<p>Attention aux chiffres de ce genre lus en ligne (« 55 % → 70 % quand le VIX est sous 15 »). Ce sont des illustrations, pas des mesures. Le seul chiffre qui compte, c'est celui de <em>ton</em> setup, mesuré dans <em>ton</em> journal.</p>
+<p>Et un moyen simple de voir si un résultat est solide : compare la moyenne et la médiane. Un seul très gros gain déplace la moyenne, pas la médiane. Si les deux sont très différentes, c'est qu'un trade exceptionnel fait tout ton résultat.</p>
+<p>L'espérance dit combien tu gagnes en moyenne. Elle ne dit pas <em>quand</em>. Avec un edge réel, tu peux quand même enchaîner les pertes ; l'espérance, c'est ta conviction, la variance, c'est ton risque.</p>
+<hr>
+<h2>Notion 2 — Le drawdown et le risque</h2>
+<h3>La théorie</h3>
+<p>Tu as un edge. Combien de temps, et jusqu'où, tu peux perdre avec ?</p>
+<p>C'est le drawdown. Et le piège, c'est de croire que ton pire drawdown passé est le pire possible.</p>
+<p>Prends tes 100 derniers trades et mélange-les dans un autre ordre, des milliers de fois : c'est le Monte Carlo. Même edge, mêmes trades, et pourtant certains ordres donnent un drawdown bien plus profond que celui que tu as vécu. Tu as eu de la chance sur l'ordre, disons.</p>
+<p>Donc ton drawdown passé n'est pas un maximum ; traite-le comme un minimum.</p>
+<h3>La pratique</h3>
+<p>Un stop et une cible, c'est le minimum. Un trade sans stop et sans cible n'a pas de gestion du risque.</p>
+<p><strong>Raisonne par séance, pas seulement par trade.</strong> « 2 % par trade », ça ne veut rien dire sans la fréquence : à 20 trades par jour, tu peux perdre 40 % dans la journée. Fixe plutôt une perte max par séance (1 à 3 %), et arrête-toi quand elle est atteinte. Et plus de trades dans une journée ≠ plus de performance ; c'est faux.</p>
+<p>Bien fait, le risque diminue avec le capital : à 2 % d'un compte de 1 000 €, tu risques 20 € ; si le compte tombe à 700 €, tu ne risques plus que 14 €.</p>
+<p><strong>Déplacer ton stop change la probabilité du trade.</strong> Remonter ton stop au prix d'entrée (break-even, BE), c'est accepter moins de recul ; le trade a moins de chances d'aller au bout. Pour neutraliser le risque sans toucher au stop, tu peux couper une partie de la position quand elle est gagnante, juste assez pour qu'un retour au stop ne coûte plus rien.</p>
+<p><strong>Moyenner à la baisse, c'est un trade de prière.</strong> Racheter à chaque baisse parce que tu refuses de sortir, ça multiplie le risque prévu. Ça marche 7 ou 8 fois sur 10 ; la fois où le prix ne se retourne pas, tu perds tout. Entrer en plusieurs fois n'est sain que si tout est décidé avant : les niveaux, la taille totale et le stop.</p>
+<blockquote>
+<p><strong>Risque fixe et set & forget : ça se débat</strong></p>
+<p>Le risk management, c'est un débat éternel. Sauf chez Som : 0,5 % sur tous les trades, et tkt. Setup parfait ou prière, même tarif.</p>
+<p></p>
+<p>Décortiquons, parce qu'il y a un fond de vrai.</p>
+<p></p>
+<p><strong>Le risque fixe.</strong> Dans mon cas, pendant longtemps : risque fixe, peu importe le setup. 1R = 1R. C'est le meilleur garde-fou pour débuter ; tant que tu ne sais pas mesurer ton edge, risquer pareil à chaque trade t'empêche de tout perdre sur un coup de tête.</p>
+<p></p>
+<p>Pour autant, tous tes setups n'ont pas la même qualité. Exemple réel sur l'or : un long contre une grosse zone (VWAP monthly, rejection zone). Je le prends quand même, parce que le GC a un carnet fin, il fait facilement des mèches et réagit fort aux liquidations. Mais je ne suis pas obligé de viser 1R : je peux prendre 0,5R, ou suivre le trade, parce que j'ai intégré que la zone avait de grandes chances de repousser le prix.</p>
+<p></p>
+<p>À l'inverse, un short sur la VWAP monthly, dans la tendance que j'estime, avec une confirmation orderflow parfaite : là je vais peut-être viser plus que 1R, voire risquer plus, parce que ma conviction est meilleure. Et cette conviction dépend de la qualité de mes process, pas de mon humeur.</p>
+<p></p>
+<p><strong>Le set & forget</strong> (entrer, poser stop et cible, et oublier). Même logique : ça te protège de ta propre main et ça rend tes trades mesurables. Mais pris au pied de la lettre, ça revient à décider que rien de ce qui arrive après ton entrée ne compte. Ton scénario peut être invalidé avant ton stop.</p>
+<p></p>
+<p>In fine, c'est le débat entre discrétionnaire et mécanique. La règle que je garde : ce qui est décidé avant l'entrée s'applique ; ce qui n'était pas prévu ne s'improvise pas. Si tu veux adapter ta cible ou ta taille, écris dans quels cas à l'avance, classe tes setups (A, B, C) à partir de tes chiffres, et mesure. Jamais au feeling, jamais en cours de trade, jamais pour te refaire.</p>
+</blockquote>
+<hr>
+<h2>Notion 3 — La géométrie du risque en prop</h2>
+<h3>La théorie</h3>
+<p>Une prop firm n'est pas le marché : tu trades des règles qu'une autre entreprise t'impose. Le but n'est donc pas de gagner le plus possible ; c'est de passer l'objectif avant de toucher la limite de perte. Et pour ça, la variance compte autant que l'espérance.</p>
+<p>Prends une évaluation typique : objectif +3 000 $, perte max 2 000 $ depuis le plus haut du compte. Trois traders ont exactement la même espérance, +0,2R par trade, mais pas le même profil :</p>
+<table><tbody>
+<tr><th>Risque par trade</th><th>60 % de réussite, cible 1R</th><th>40 % de réussite, cible 2R</th><th>24 % de réussite, cible 4R</th></tr>
+<tr><td>500 $</td><td>62 % passent</td><td>45 % passent</td><td>37 % passent</td></tr>
+<tr><td>250 $</td><td>85 % passent</td><td>59 % passent</td><td>43 % passent</td></tr>
+<tr><td>100 $</td><td>100 % passent</td><td>90 % passent</td><td>65 % passent</td></tr>
+</tbody></table>
+<p><em>Calcul, pas mesure : 100 000 évaluations simulées par case, en supposant le taux de réussite connu et les trades indépendants. Dans la réalité, tu ne connais ton taux de réussite qu'à peu près (voir l'encadré de la notion 4).</em></p>
+<h3>La pratique</h3>
+<p>Deux choses à en tirer.</p>
+<p>Même espérance, résultats très différents. Le « sniper » qui vise 4R gagne rarement ; ses séries de pertes arrivent avant l'objectif. En évaluation, un taux de réussite élevé avec une cible modérée passe plus souvent.</p>
+<p>Et réduire le risque par trade, c'est le levier le plus puissant. Le prix à payer, c'est le temps : à 100 $ par trade, le premier profil met environ 150 trades pour passer, contre une quinzaine à 500 $.</p>
+<p>D'où le problème du « 1 % par trade ». Sur ton propre compte, 1 % du capital, ça se tient. En prop, 1 % d'un compte de 50 000 $, c'est 500 $ ; mais ce que tu peux vraiment perdre, c'est la limite de 2 000 $. Tu risques donc 25 % de ta marge à chaque trade : quatre pertes d'affilée et c'est fini. Le risque se calcule sur ce que tu peux perdre, pas sur la taille affichée du compte.</p>
+<p>Le conseil d'un trader, que je partage : risquer environ 4 % de la limite de perte par trade. Sur une limite de 2 500 $, ça fait 100 $ ; dix pertes d'affilée te coûtent 40 %, et tu es encore là. À 10 % par trade, les mêmes dix pertes te sortent. Et elles arrivent : avec un taux de réussite autour de 50 %, une série de 8 pertes d'affilée est normale sur 300 trades. Autre règle de lui : si ton stop doit être énorme pour que le trade ait du sens, tu passes ou tu attends un meilleur prix. Le stop n'est pas un paramètre à régler ; c'est un symptôme de ton entrée.</p>
+<p>Une fois le compte financé, l'objectif change : il ne s'agit plus de passer, mais de retirer l'argent, vite. La prop firm elle-même est un risque ; elle peut changer ses règles ou ne pas payer. Tu retires, tu ne laisses pas grossir le compte chez elle.</p>
+<hr>
+<h2>Notion 4 — Construire un edge</h2>
+<h3>La théorie</h3>
+<p>Si tu comprends ce qui se passe, et ce qui a des chances de se passer, t'auras un edge. Pour autant, ça se traduit par des patterns ; si tu sais identifier et exploiter les patterns, ça peut être un edge également.</p>
+<p>L'analyse technique nous renvoie à trois types de stratégies :</p>
+<ul>
+<li>le <strong>mean reversion</strong> (retour à la moyenne) ;</li>
+<li>le <strong>momentum</strong> ;</li>
+<li>le <strong>pullback</strong>, qui combine le meilleur des deux.</li>
+</ul>
+<p>Tout le reste, ce sont des dérivés et des appellations différentes. Personnellement, je me concentre majoritairement sur le mean reversion et les pullbacks.</p>
+<p>L'environnement compte : en range, on privilégie le mean reversion aux extrêmes ; en tendance, on peut jouer les cassures pour accompagner le mouvement. C'est l'équilibre et le déséquilibre de la partie 3.</p>
+<p>Ce qui compose une stratégie, ce sont des confluences, qu'on peut répartir entre :</p>
+<ul>
+<li>l'identification de la tendance ;</li>
+<li>le repérage des zones ;</li>
+<li>la confirmation d'entrée.</li>
+</ul>
+<p>Imagine une équation simple : un trade parfait vaut 3 points, et chaque confluence rapporte 1 point. Un trade dans la tendance, sur une zone, avec une confirmation : 3 points, c'est un bon trade. Maintenant, si tu estimes qu'une zone vaut 2 points et que la tendance vaut 0, tu peux te retrouver avec une stratégie basée sur des confirmations dans des zones, et avoir quand même de bons trades.</p>
+<p>Un POI est une zone. Un POC est un niveau qui peut servir de zone pour renvoyer le prix, tout autant qu'un niveau de Fibonacci quelconque. Peu importe la forme ou le fond de la confluence ; ce qui compte, c'est si ça marche ou non. Et ça, ce sont les statistiques de ton edge qui le disent.</p>
+<h3>La pratique</h3>
+<p>De la logique et du backtest. Jamais de « oh tiens j'aime bien, ça paraît logique ».</p>
+<p>Le raisonnement découle de l'expérience, et on trade un edge, donc un avantage statistique qui découle d'un raisonnement ; pas qui sort du chapeau.</p>
+<ol>
+<li><strong>Écris pourquoi ça devrait marcher, avant de tester.</strong> Quel comportement du marché tu captures, qui tu exploites. Par exemple : des vendeurs trapped, tu passes long, tu paries sur la hausse forcée par leur sortie (partie 3). Ça évite de tester des idées au hasard jusqu'à tomber sur une qui colle au passé.</li>
+<li><strong>Écris ta stratégie en « si… alors… ».</strong> « Si le prix fait A au niveau B avec la confirmation C, j'entre avec un risque D. » Par exemple : si le prix forme un marteau en 15 minutes sur l'ouverture du jour, avec deux fois le volume habituel, j'entre avec 1 % de risque. C'est exactement le format à donner à une IA pour qu'elle teste ta stratégie (partie 1).</li>
+<li><strong>Backteste, minimum 300 trades avant de trader en réel.</strong> Sinon, tu te brûles les doigts et tu perds des sous. Et plus de backtest = plus de performance, parce que plus de confiance ; tu vois mieux.</li>
+</ol>
+<p>Ce qui ne se backteste pas, dis-le. Les pivots, par exemple : quand ils tombent sur un cluster existant, ça ajoute disons 10 % de probabilité que la zone tienne, mentalement. Mentalement. Ce n'est pas un chiffre mesuré, et ce n'est pas un outil indispensable.</p>
+<p>Une même stratégie varie selon la classe d'actifs (FX, indices, obligations, cryptos), la volatilité et le contexte. Ça se débat ; ça se backteste. Un pro a d'ailleurs un portefeuille de stratégies, pas une seule : si elles ne perdent pas en même temps, leurs drawdowns se compensent en partie, et la courbe est plus lisse pour le même rendement. Unir des confluences qui te plaisent peut créer une stratégie, et c'est du backtest permanent de tes idées.</p>
+<p>Il y a deux styles : le <strong>discrétionnaire</strong> (jugement en temps réel, cas par cas) et le <strong>systématique</strong> (règles écrites, testables, suivies avec constance). Commence systématique. Le discrétionnaire, c'est l'exploration : tu apprends le raisonnement et les subtilités, pour pouvoir ensuite utiliser une stratégie mécanique. Les backtests, eux, vont sur la stratégie mécanique. Tu ajouteras une couche de jugement seulement si ton journal prouve qu'elle améliore tes résultats.</p>
+<p>Enfin, un système testé fonctionne tant que ses conditions de test restent vraies (non-stationnarité). Tu sais qu'elles ne le sont plus parce que tu continues de mesurer.</p>
+<blockquote>
+<p>[!important] Les formules sont la partie facile</p>
+<p>Le vrai problème, c'est l'erreur d'estimation. Ton taux de réussite, ton drawdown sont mesurés sur un échantillon, sur des données qui changent de régime. Quelques points d'erreur sur le taux de réussite suffisent à transformer une taille de position « optimale » en taille trop grosse. Dimensionne sur une fourchette, jamais sur un chiffre.</p>
+</blockquote>
+<hr>
+<h2>Notion 5 — Le système avant la psychologie</h2>
+<h3>La théorie</h3>
+<p>Il y a une possibilité non nulle qu'on soit notre propre démon. Si on accuse la psychologie, on se laisse la possibilité de rentrer dans un cercle vicieux : de la pression, des actions insensées qui génèrent de la pression, des doutes sur la psychologie…</p>
+<p>Un système ne doute pas.</p>
+<p>Le trading, c'est une histoire de maths ; autant exploiter ces mathématiques comme on peut. Voire même, notre système va nous faire rentrer dans un cercle vertueux : confiance aux chiffres, des scénarios plus clairs, donc une meilleure exécution…</p>
+<p>On peut être défaillant. On sera fatigué, on aura peur, on voudra se refaire. Un bon système, bien fait, suffit, à condition de lui obéir.</p>
+<p>Le basculement est mental : passer de « ce trade va-t-il gagner ? » à « ce setup a-t-il une espérance positive ? ». Le hasard d'un trade compte beaucoup moins quand tu joues un edge sur des centaines de trades. Une perte n'est plus une erreur ; une règle non respectée, si.</p>
+<h3>La pratique</h3>
+<p>Penser en systèmes, en processus mécaniques, clairs, dès maintenant : à mon sens, c'est le meilleur conseil que je peux te donner.</p>
+<p><strong>Tes règles viennent de tes chiffres.</strong> Ce ne sont pas des principes copiés, c'est de la data : tu regardes ton journal et tu en tires des règles. Par exemple : pas de trading fatigué ; arrêt après 3 % de perte dans la journée ; pas de séance de plus de 3 heures si tes derniers trades des longues séances perdent. Tes règles ne seront pas celles d'un autre.</p>
+<p>Et tu peux aller plus loin : construis-toi un outil qui applique tes process. J'ai un indicateur qui m'affiche les gros acheteurs et vendeurs sous forme de bulles, et un signal quand il y a absorption + volume + delta fort. Ça me donne un biais automatisé, au lieu de devoir réfléchir à chaque fois à ce qui se passe. Et vu que ce sont mes processus, je peux relativement lui faire confiance. Rien de complexe : juste du backtest, et savoir utiliser l'IA.</p>
+<p>L'objectif n'est pas le système le plus complexe. C'est un système assez clair pour être testé, assez strict pour te donner un retour honnête, et assez souple pour s'améliorer.</p>
+<h2>Erreurs fréquentes</h2>
+<ul>
+<li><strong>Juger une stratégie sur son taux de réussite.</strong> C'est l'espérance qui compte.</li>
+<li><strong>Croire que ton drawdown passé est le pire possible.</strong> Traite-le comme un minimum.</li>
+<li><strong>Compter en % par trade sans compter les trades par jour.</strong> Raisonne par séance.</li>
+<li><strong>Régler une stratégie jusqu'à ce que le backtest soit parfait.</strong> Elle a appris le bruit.</li>
+<li><strong>Trader en réel avant 300 trades de backtest.</strong></li>
+<li><strong>Prendre un chiffre lu en ligne pour une mesure.</strong> Seul ton journal compte.</li>
+<li><strong>En prop firm, viser de grosses cibles rares.</strong> Même EV+, les séries de pertes font sauter le compte avant l'objectif.</li>
+<li><strong>Moyenner à la baisse une position perdante.</strong></li>
+<li><strong>Changer ta taille ou ta cible en cours de trade.</strong> Ce qui n'était pas prévu ne s'improvise pas.</li>
+</ul>
+<h2>Transition vers la partie suivante</h2>
+<p>Ton système lit ce qui se passe sur le graphique. Pour autant, le prix réagit aussi à des acteurs qu'on ne voit pas sur un graphique : ceux qui achètent à chaque paie quoi qu’il arrive, ceux qui suivent la tendance, ceux qui couvrent des options. Ils sont dans la même enchère que toi ; autant savoir qui ils sont. C'est la partie 5.</p>
+<hr>
+<div class="pager"><a href="3.html">← Partie précédente</a><a href="5.html">Partie suivante →</a></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script></body></html>
