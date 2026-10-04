@@ -1,165 +1,191 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>1. L’IA · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="active">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="">5. Les flux</a><a href="6.html" class="">6. Exercices, IA et sources</a></nav></header><main id="contenu"><h1>1. L'IA</h1>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>1. L’IA · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="active">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="">5. Les flux</a><a href="6.html" class="">6. Prompts, conclusion et merci</a></nav></header><main id="contenu"><h1>1. L'IA</h1>
 <p>🟢 · Débutant · Quatre temps : pourquoi l'IA · l'installer · bien lui parler · ce qu'elle fait pour ton trading</p>
 <h2>Ce que tu sauras faire</h2>
 <ul>
 <li>Savoir ce que l'IA fait mieux que toi, et ce qu'elle ne fera jamais à ta place.</li>
-<li>Installer ton espace de travail avec Claude ou Codex, sans taper une seule commande.</li>
-<li>Écrire une demande qui donne une vraie réponse, pas un avis au hasard.</li>
-<li>L'utiliser pour apprendre cette ressource, et plus tard pour ton trading : journal, chiffres, stratégie, indicateur.</li>
+<li>Installer Claude ou ChatGPT, puis ton espace de travail, sans taper une seule commande.</li>
+<li>Écrire une demande qui donne une vraie réponse.</li>
+<li>T'en servir pour apprendre cette ressource, puis pour ton trading.</li>
 </ul>
 <h2>Définitions</h2>
 <ul>
 <li><strong>IA</strong> (ici) = un modèle de langage, comme Claude ou ChatGPT. Il lit ce que tu écris et produit la suite la plus probable. Il ne « sait » pas ; il a énormément lu.</li>
 <li><strong>Prompt</strong> = ce que tu lui écris. Ta demande, avec son contexte.</li>
-<li><strong>Contexte</strong> = tout ce qu'elle a sous les yeux au moment de répondre : ta conversation, tes fichiers, tes instructions. Ce qui n'y est pas, elle ne le sait pas.</li>
+<li><strong>Contexte</strong> = tout ce qu'elle a sous les yeux au moment de répondre : la conversation, tes fichiers, tes instructions. Ce qui n'y est pas, elle ne le sait pas.</li>
 <li><strong>Agent</strong> = une IA qui peut agir sur ton ordinateur, dans le dossier que tu lui donnes : lire, créer, modifier des fichiers. Avec ton accord.</li>
-<li><strong>Fichier d'instructions</strong> = un court fichier que l'application relit au début de chaque conversation : qui tu es, ce que tu veux, ses règles. <code>CLAUDE.md</code> chez Claude, <code>AGENTS.md</code> chez Codex. C'est sa mémoire de toi.</li>
+<li><strong>Fichier d'instructions</strong> = un court fichier que l'IA relit au début de chaque conversation : qui tu es, ce que tu veux, ses règles. <code>CLAUDE.md</code> chez Claude, <code>AGENTS.md</code> chez Codex (l'agent de ChatGPT). C'est sa mémoire de toi.</li>
+<li><strong>Tokens</strong> = les morceaux de texte que l'IA lit et écrit. Ton abonnement en donne une quantité limitée ; plus une conversation est longue, plus elle en consomme.</li>
 <li><strong>Hallucination</strong> = une réponse inventée, dite avec la même assurance qu'une vraie.</li>
-<li><strong>VS Code</strong> = un éditeur gratuit, pour ouvrir et relire les fichiers de ton dossier.</li>
+<li><strong>VS Code</strong> = un éditeur gratuit, pour ouvrir et relire les fichiers de ton dossier, et parler à ton IA à côté.</li>
 </ul>
 <hr>
 <h2>1.1 Pourquoi l'IA, et pourquoi en premier</h2>
 <p>Pourquoi une ressource de trading commence par l'IA ? Parce que c'est le truc le plus Pareto de toute la ressource.</p>
-<p>La loi de Pareto, c'est l'idée qu'environ 20 % des efforts produisent 80 % des résultats. Tout ne se vaut pas : quelques choses bien faites comptent plus que tout le reste réuni. Apprendre à te servir de l'IA fait partie de ces 20 % : elle accélère tout ce qui suit.</p>
-<p>Tu vas lire beaucoup de notions d'un coup. Tu ne vas pas tout comprendre à la première lecture, c'est normal. Ton IA, elle, est là à 3 h du matin, elle ne se lasse pas de tes questions, et elle t'explique la même chose de cinq façons différentes jusqu'à ce que ça rentre. Prends des notes : utilise l'IA, il y a plein de manières. Le but : progresser au plus vite.</p>
+<p>La loi de Pareto, c'est l'idée qu'environ 20 % des efforts produisent 80 % des résultats. Apprendre à te servir de l'IA fait partie de ces 20 % : elle accélère tout ce qui suit.</p>
+<p>Tu vas lire beaucoup de notions d'un coup. Tu ne vas pas tout comprendre à la première lecture, c'est normal. Ton IA, elle, est là à 3 h du matin, elle ne se lasse pas de tes questions, et elle t'explique la même chose de cinq façons jusqu'à ce que ça rentre.</p>
 <p>Pour autant, elle ne remplace pas ton cerveau. Chacun son rôle :</p>
 <ul>
 <li><strong>Toi</strong> : tu décides ce que tu veux, tu choisis ton process, tu juges si c'est cohérent, et tu assumes le trade.</li>
 <li><strong>L'IA</strong> : elle explique, elle calcule, elle range, elle code, elle répète sans se fatiguer.</li>
 </ul>
-<p>Addy Osmani, qui dirige des équipes d'ingénieurs chez Google, appelle ça le problème des 70 % : l'IA te fait 70 % du chemin très vite. Les 30 % restants demandent de comprendre ce que tu fais ; et c'est là que tout se joue. Il note aussi qu'elle aide plus ceux qui savent déjà que ceux qui débutent. D'où l'ordre de cette ressource : les bases d'abord, l'IA pour les apprendre plus vite, pas pour les sauter.</p>
-<p>Et c'est sur les calculs qu'elle est meilleure que nous : les stats d'un journal, un backtest. Là où elle est mauvaise : deviner le prochain mouvement. Elle n'en sait pas plus que toi ; souvent moins, parce qu'elle ne voit pas ton graphique.</p>
 <figure id="figure-13" class="figure anim" data-state="4"><figcaption>Figure 13 · Qui fait quoi</figcaption><div class="scene-wrap"><svg class="scene" viewBox="0 0 640 240" role="img" aria-label="Tu décides et décris, l'IA produit, tu vérifies"><defs><marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="tete"/></marker></defs><text x="20" y="58" class="or k1" font-size="16" text-anchor="start">Toi</text><text x="20" y="188" class="k1" font-size="16" text-anchor="start">L'IA</text><line x1="80" y1="92" x2="620" y2="92" class="grille k1"/><line x1="80" y1="150" x2="620" y2="150" class="grille k1"/><g class="k1"><rect x="90" y="30" width="120" height="50" rx="8" class="boite or"/><text x="150.0" y="60.0" class="or" font-size="15" text-anchor="middle">décides</text></g><g class="k2"><rect x="250" y="30" width="120" height="50" rx="8" class="boite or"/><text x="310.0" y="60.0" class="or" font-size="15" text-anchor="middle">décris</text></g><line x1="212" y1="55" x2="248" y2="55" class="fleche draw k2" marker-end="url(#fleche)" pathLength="1"/><line x1="330" y1="82" x2="380" y2="158" class="fleche draw k3" marker-end="url(#fleche)" pathLength="1"/><g class="k3"><rect x="360" y="160" width="120" height="50" rx="8" class="boite "/><text x="420.0" y="190.0" class="" font-size="15" text-anchor="middle">produit</text></g><line x1="482" y1="170" x2="510" y2="82" class="fleche draw k4" marker-end="url(#fleche)" pathLength="1"/><g class="k4"><rect x="490" y="30" width="120" height="50" rx="8" class="boite or"/><text x="550.0" y="60.0" class="or" font-size="15" text-anchor="middle">vérifies</text></g><path d="M550,28 C550,4 310,4 310,28" class="retour draw k4" pathLength="1" fill="none" marker-end="url(#fleche)"/><text x="430" y="50" class="doux k4" font-size="12" text-anchor="middle">sinon tu corriges</text></svg></div><ol><li><span class="step">01</span><strong>Tu décides</strong><p>Ton objectif, ton process, ce que tu veux apprendre.</p></li><li><span class="step">02</span><strong>Tu décris</strong><p>Ton niveau, ta demande, la forme attendue.</p></li><li><span class="step">03</span><strong>L’IA produit</strong><p>Explication, calcul, fichier, code.</p></li><li><span class="step">04</span><strong>Tu vérifies</strong><p>Est-ce juste, cohérent, utile ? Sinon tu corriges.</p></li></ol><button type="button" class="rejouer">↻ Rejouer</button><small>Schéma pédagogique fictif · les vignettes s’allument avec l’animation</small></figure>
-<p>Et le plus gros intérêt, c'est ailleurs. L'IA te pousse à penser en systèmes, en processus mécaniques, clairs. Pour qu'elle t'aide, il faut lui expliquer ce que tu fais, étape par étape ; et si tu n'arrives pas à l'expliquer, c'est que ce n'est pas encore clair pour toi non plus. C'est sans doute le meilleur conseil de toute cette ressource.</p>
+<p>Elle est meilleure que nous sur les calculs : les stats d'un journal, un backtest. Elle est mauvaise pour deviner le prochain mouvement ; elle n'en sait pas plus que toi.</p>
+<p>Et le plus gros intérêt est ailleurs. L'IA te pousse à penser en systèmes, en processus clairs. Pour qu'elle t'aide, il faut lui expliquer ce que tu fais, étape par étape ; et si tu n'arrives pas à l'expliquer, c'est que ce n'est pas encore clair pour toi non plus. C'est sans doute le meilleur conseil de toute cette ressource.</p>
 <h2>1.2 Installer</h2>
-<p><strong>Première fois.</strong> Installe l'application de bureau Claude ou Codex, au choix, et connecte-toi. Ouvre son espace de travail local, choisis un dossier vide que tu peux retrouver facilement, puis colle le message ci-dessous. Si l'application ne peut pas accéder aux fichiers de ce dossier, active son mode de travail local ou donne-lui accès au dossier avant de continuer. L'IA t'expliquera ensuite comment installer VS Code, l'éditeur dans lequel tu retrouveras tes projets. Tu n'as pas besoin de connaître une commande.</p>
-<blockquote>
+<p>Trois étapes : l'application, l'éditeur, puis trois prompts à coller. Compte une heure la première fois.</p>
+<h3>Étape 1 — Choisir et installer l'application</h3>
+<p>Deux choix, aussi bons l'un que l'autre pour commencer :</p>
+<table><tbody>
+<tr><th></th><th>Claude</th><th>ChatGPT</th></tr>
+<tr><td>Entreprise</td><td>Anthropic</td><td>OpenAI</td></tr>
+<tr><td>Abonnement conseillé</td><td>Pro</td><td>Plus</td></tr>
+<tr><td>Prix au mois</td><td>20 $</td><td>20 $</td></tr>
+<tr><td>L'agent qui travaille dans tes fichiers</td><td>Claude Code</td><td>Codex</td></tr>
+</tbody></table>
+<ol>
+<li>Va sur le site officiel (claude.ai ou chatgpt.com) et crée ton compte.</li>
+<li>Prends <strong>l'abonnement le moins cher</strong> des deux formules payantes, celui à environ 20 $. Inutile de prendre plus au début : tu ne sauras pas encore t'en servir.</li>
+<li><strong>Paie au mois, pas à l'année.</strong> L'annuel est un peu moins cher (chez Claude, 200 $ d'un coup, soit environ 17 $ par mois), mais tu t'engages avant de savoir si l'outil te convient, et les offres changent vite.</li>
+<li>Télécharge l'<strong>application de bureau</strong> depuis la même page, installe-la, connecte-toi.</li>
+</ol>
+<h3>Étape 2 — Les trois prompts</h3>
+<p>Ouvre une nouvelle conversation dans l'application, et colle les prompts <strong>dans l'ordre</strong>, un par un. Attends qu'un prompt soit terminé avant de passer au suivant.</p>
+<aside class="callout callout-warning">
 <p><strong>Sécurité</strong></p>
 <p>Donne à ton IA <strong>un seul dossier</strong>. Jamais d'identifiants, de mots de passe ni de clés d'API dans ce dossier ou dans une conversation. Lis ce qu'elle te demande d'autoriser avant de dire oui.</p>
-</blockquote>
-<p><strong>Le prompt</strong></p>
-<pre><code>
-Je débute avec une IA pour apprendre et organiser mes projets de trading.
+</aside>
+<p><strong>Prompt 1 — Qu'elle te connaisse.</strong> Le plus important des trois. Une IA qui ne sait rien de toi répond du générique ; celle-là va te poser des questions jusqu'à avoir le contexte qui compte.</p>
+<pre><code>Je débute avec une IA et je veux qu&#x27;elle me serve vraiment, en particulier
+pour le trading. Avant de me conseiller quoi que ce soit, apprends à me
+connaître.
 
-Guide-moi en français simple, une étape à la fois. Ne me demande aucune
+Pose-moi des questions, en français simple, par petits groupes de 3 ou 4.
+Commence par les plus utiles (la règle des 20/80 : celles dont la réponse
+change le plus la façon dont tu vas m&#x27;aider). Couvre au moins :
+- ce que je fais dans la vie, mon temps disponible, mon niveau en informatique ;
+- mon niveau en trading, mes marchés, mon style, ce que j&#x27;ai déjà essayé ;
+- mes projets en cours, trading ou non, et celui qui compte le plus ;
+- à quoi je veux que tu me serves concrètement : apprendre, tenir un journal,
+  analyser mes trades, tester une stratégie, coder, m&#x27;organiser… ;
+- ce qui m&#x27;a fait perdre du temps ou de l&#x27;argent jusqu&#x27;ici ;
+- comment je préfère qu&#x27;on me réponde (court, détaillé, avec exemples…).
 
-commande à taper. Commence par vérifier que tu peux travailler dans le
+Relance quand une réponse est vague. Arrête-toi quand tu as l&#x27;essentiel :
+ne me noie pas sous les questions.
 
-dossier local que j&#x27;ai choisi. Si tu ne peux pas, explique-moi où cliquer
+À la fin, écris un résumé intitulé « Mon contexte », en une page maximum,
+que je pourrai te redonner plus tard. Puis dis-moi les trois façons dont tu
+peux m&#x27;aider le plus, dans l&#x27;ordre.</code><button type="button" class="copy-code">Copier</button></pre>
+<p>Garde ce résumé « Mon contexte » : il sert au prompt 3.</p>
+<p><strong>Prompt 2 — Ton espace de travail.</strong> Dans la même conversation.</p>
+<pre><code>Maintenant, aide-moi à installer mon espace de travail, une étape à la fois,
+sans jamais me demander de taper une commande. Attends que je te dise
+« c&#x27;est fait » avant de passer à l&#x27;étape suivante.
 
-dans cette application ; attends que je te dise que c&#x27;est fait.
+1. Demande-moi si je suis sur Windows ou Mac.
+2. Aide-moi à créer UN dossier de travail, facile à retrouver (par exemple
+   « Trading-IA » dans Documents). Propose à l&#x27;intérieur une organisation
+   minimale adaptée à « Mon contexte » : seulement les dossiers vraiment
+   utiles, avec leur rôle en une ligne.
+3. Guide-moi pour installer VS Code depuis son site officiel, écran par écran,
+   puis pour y ouvrir ce dossier.
+4. Guide-moi pour installer dans VS Code l&#x27;extension officielle de l&#x27;agent
+   de mon abonnement (Claude Code pour Claude, Codex pour ChatGPT), et pour
+   m&#x27;y connecter avec mon compte.
+5. Propose-moi au plus trois autres extensions ou plugins vraiment utiles
+   pour débuter, en expliquant à quoi sert chacun. Je choisis ; n&#x27;en impose
+   aucun.
 
+Ne déplace, ne supprime et n&#x27;écrase jamais mes fichiers existants.
+Termine en me montrant comment ouvrir l&#x27;agent dans VS Code.</code><button type="button" class="copy-code">Copier</button></pre>
+<p><strong>Prompt 3 — Son fichier d'instructions.</strong> Celui-là, colle-le <strong>dans l'agent, dans VS Code</strong>, avec ton dossier ouvert. Ajoute ton résumé « Mon contexte » juste en dessous.</p>
+<pre><code>Crée à la racine de ce dossier mon fichier d&#x27;instructions (CLAUDE.md si tu es
+Claude, AGENTS.md si tu es Codex), à partir de « Mon contexte » ci-dessous.
+Montre-le-moi avant de l&#x27;enregistrer. Court : une page maximum, en puces.
 
+Il contient :
+1. Qui je suis : niveau, marchés, projets, ce que j&#x27;attends de toi.
+2. Comment me répondre : en français simple ; court par défaut, détaillé si je
+   le demande ; un exemple quand c&#x27;est utile ; dis-le quand tu n&#x27;es pas sûr,
+   et distingue ce qui est vérifié de ce qui est supposé.
+3. Comment travailler :
+   - avant une tâche de plus de quelques étapes, propose un plan court, la
+     solution la plus simple en premier, et attends mon accord ;
+   - une étape à la fois ; vérifie que chaque étape marche avant la suivante ;
+   - ne travaille que dans ce dossier ; ne supprime ni n&#x27;écrase rien sans
+     mon accord ;
+   - jamais de mot de passe, de clé ni de donnée de compte de trading.
+4. Économiser mes tokens et garder de bonnes réponses :
+   - ne relis que les fichiers utiles à la tâche, pas tout le dossier ;
+   - pas de longs résumés de ce que je viens d&#x27;écrire ;
+   - quand la conversation devient longue ou change de sujet, propose-moi de
+     résumer les points clés et de repartir dans une nouvelle conversation ;
+   - ce que je te répète souvent, propose de l&#x27;ajouter à ce fichier.
+5. Le trading : ne me donne jamais de signal d&#x27;achat ou de vente ; aide-moi
+   à comprendre, à calculer, à tester et à tenir mon journal.
 
-Avant de créer quoi que ce soit, pose-moi ces questions, ensemble :
+Termine par un fichier « Bien démarrer » : où sont mes projets, ce que
+contient chaque dossier, et comment reprendre notre travail la prochaine fois.
 
-1. Quel est mon niveau en trading et quels marchés m&#x27;intéressent ?
-
-2. Qu&#x27;est-ce que je veux faire en premier : apprendre, tenir un journal,
-
-   analyser des trades, développer une stratégie, ou autre chose ?
-
-3. Ai-je déjà des notes ou des projets à conserver ? Ne va pas les
-
-   chercher toi-même : je les copierai dans ce dossier si besoin.
-
-4. Suis-je sur Windows ou Mac ? VS Code est-il déjà installé ?
-
-
-
-Après mes réponses, propose en quelques lignes une organisation minimale
-
-adaptée à mes projets. N&#x27;ajoute que les dossiers vraiment utiles. Montre-moi
-
-le nom du dossier racine et les fichiers prévus avant de les créer. Attends
-
-mon accord. Ne déplace, ne supprime et n&#x27;écrase jamais mes fichiers existants.
-
-
-
-Si VS Code manque, accompagne-moi vers son site officiel, puis guide-moi
-
-écran par écran pour l&#x27;installer et ouvrir mon dossier. N&#x27;installe aucune
-
-extension par défaut : propose-en une seulement si elle sert mon usage et
-
-explique pourquoi. Si tu peux créer les dossiers et fichiers dans le dossier
-
-autorisé, fais-le après mon accord ; sinon, guide-moi dans l&#x27;interface.
-
-
-
-Crée un court fichier « Bien démarrer » qui résume mon objectif, où se
-
-trouvent mes projets, ce que contient chaque dossier et comment reprendre
-
-notre travail dans cette application. Crée aussi le fichier d&#x27;instructions
-
-que cette application relit à chaque conversation (CLAUDE.md pour Claude,
-
-AGENTS.md pour Codex) : mon niveau, mon objectif et ces règles : réponds en
-
-français simple ; travaille seulement dans ce dossier ; explique ce que tu
-
-vas faire avant de le faire ; ne me demande jamais de mot de passe ni de clé.
-
-N&#x27;y mets ni mot de passe, ni clé, ni donnée de compte de trading. Termine en
-
-me montrant comment retrouver ce dossier dans VS Code et quelle première
-
-action simple faire avec toi.
-
-</code></pre>
-<p>La prochaine fois, tu rouvres le même dossier dans la même application : elle relit ton fichier d'instructions, et tu reprends là où tu t'es arrêté.</p>
+Mon contexte :
+[colle ici ton résumé]</code><button type="button" class="copy-code">Copier</button></pre>
+<figure class="capture"><a href="captures/2026-10-04_vscode-interface.png" class="zoom" title="Agrandir"><img src="captures/2026-10-04_vscode-interface.png" alt="VS Code : à gauche tes dossiers et fichiers, au centre le fichier ouvert. L&#x27;agent s&#x27;ouvre dans un panneau à côté." loading="lazy"></a><figcaption>VS Code : à gauche tes dossiers et fichiers, au centre le fichier ouvert. L&#x27;agent s&#x27;ouvre dans un panneau à côté.</figcaption></figure>
+<p>La prochaine fois, tu ouvres ton dossier dans VS Code, puis l'agent : il relit ton fichier d'instructions, et tu reprends là où tu t'es arrêté.</p>
 <h2>1.3 Bien lui parler</h2>
-<p>Une IA ne lit pas dans tes pensées. Elle répond à ce que tu lui donnes ; si tu lui donnes peu, elle comble avec du générique.</p>
+<p>Une IA ne lit pas dans tes pensées. Si tu lui donnes peu, elle comble avec du générique.</p>
 <p>Compare :</p>
 <ul>
 <li>« C'est quoi la VWAP ? »</li>
-<li>« Je débute en trading. J'ai lu que la VWAP est le prix moyen pondéré par le volume. Explique-moi en cinq lignes pourquoi des gros acteurs la regardent, avec un exemple chiffré simple. Puis pose-moi une question pour vérifier que j'ai compris. Si tu n'es pas sûr d'un point, dis-le. »</li>
+<li>« Je débute en trading. J'ai lu que la VWAP est le prix moyen pondéré par le volume. Explique-moi en cinq lignes pourquoi des gros acteurs la regardent, avec un exemple chiffré simple. Puis pose-moi une question pour vérifier que j'ai compris. »</li>
 </ul>
-<p>La première te donne une définition de dictionnaire. La seconde te donne un cours à ton niveau, et un contrôle.</p>
-<p>Le contexte, c'est tout. Ce que tu mets dedans, tu le retrouves dans la réponse ; si tu mets du vague, tu récupères du vague. Pars du principe qu'elle ne sait rien de toi.</p>
-<p>Les bases, dans l'ordre où tu vas t'en servir :</p>
+<p>La première te donne une définition de dictionnaire. La seconde, un cours à ton niveau, et un contrôle.</p>
+<p>Six réflexes suffisent :</p>
 <ol>
-<li><strong>Dis qui tu es et ce que tu veux.</strong> Ton niveau, ce que tu as déjà lu, ce que tu attends en sortie : une explication, un calcul, une correction. Et la forme : combien de lignes, avec un exemple, un tableau.</li>
-<li><strong>Sois précis sur l'écart.</strong> Pas « mon calcul est faux », mais « j'attends une espérance positive, j'obtiens −0,1R ; voici mes chiffres ». Ce que tu attendais, ce que tu obtiens, et les éléments exacts.</li>
-<li><strong>Le plan avant l'action.</strong> Pour tout ce qui est un peu gros (un journal, un indicateur, un backtest), demande-lui d'abord plusieurs façons de faire, la plus simple en premier, sans rien construire. Tu choisis, puis elle fait. La plupart du temps, elle propose trop compliqué ; demande-lui de simplifier.</li>
-<li><strong>Découpe.</strong> Une étape à la fois. Pour un journal : d'abord les colonnes, puis les calculs, puis le résumé de la semaine. Une grosse demande d'un coup, c'est une grosse erreur d'un coup.</li>
-<li><strong>Montre un exemple.</strong> Une ligne de journal remplie comme tu la veux vaut mieux qu'un paragraphe d'explications.</li>
-<li><strong>Envoie une image.</strong> Une capture de ton graphique, annotée, lui en dit plus que dix phrases. Précise quand même le symbole, l'unité de temps, la date et l'heure ; elle ne les devine pas.</li>
-<li><strong>Donne-lui un rôle.</strong> « Agis comme un mentor qui corrige un débutant, sans me donner la réponse tout de suite. » Le ton et la profondeur changent.</li>
-<li><strong>Vérifie ce qu'elle sait.</strong> Elle a une date limite de connaissances. L'actualité, les prix du jour, la dernière version de TradingView : elle peut ne pas les connaître. Demande-lui, et donne-lui l'information si besoin.</li>
-<li><strong>Itère.</strong> La première réponse est un brouillon. Corrige, demande pourquoi elle a choisi ça, demande une autre approche.</li>
-<li><strong>Teste à chaque étape.</strong> Quand elle te construit quelque chose, vérifie que ça marche avant de passer à la suite. Une erreur trouvée tout de suite se corrige en une minute ; dix erreurs empilées, c'est une soirée.</li>
+<li><strong>Dis qui tu es et ce que tu veux.</strong> Ton niveau, ce que tu attends (explication, calcul, correction), et la forme (combien de lignes, un exemple, un tableau).</li>
+<li><strong>Sois précis.</strong> Pas « mon calcul est faux », mais « j'attends +0,2R, j'obtiens −0,1R ; voici mes chiffres ».</li>
+<li><strong>Le plan avant l'action.</strong> Pour tout ce qui est un peu gros, demande d'abord plusieurs façons de faire, la plus simple en premier. Tu choisis, puis elle fait.</li>
+<li><strong>Une étape à la fois</strong>, et vérifie chaque étape. Une grosse demande d'un coup, c'est une grosse erreur d'un coup.</li>
+<li><strong>Montre.</strong> Un exemple rempli comme tu le veux, ou une capture annotée de ton graphique (avec le symbole, l'unité de temps, la date et l'heure : elle ne les devine pas).</li>
+<li><strong>Fais-toi interroger</strong> plutôt que de tout te faire expliquer. Tu apprends en répondant, pas en lisant la réponse.</li>
 </ol>
-<p>Et un réflexe par-dessus tout : <strong>fais-toi interroger</strong> plutôt que de tout te faire expliquer. Tu apprends en répondant, pas en lisant la réponse.</p>
-<p>Deux choses à savoir pour que ça dure.</p>
-<p><strong>Sa mémoire est courte.</strong> Plus une conversation s'allonge, plus elle se remplit de vieux sujets, et plus les réponses se dégradent. Une conversation = un sujet. Quand elle devient longue, demande-lui un résumé des points clés et repars de ce résumé dans une nouvelle conversation. Et ce que tu répètes tous les jours (« réponds simplement », ton niveau, tes marchés) va une fois pour toutes dans ton fichier d'instructions.</p>
-<p><strong>La confiance se construit.</strong> Au début, donne-lui des tâches petites et bien délimitées, et relis tout, comme le travail d'un débutant : un chiffre bizarre, tu demandes d'où il vient. Plus tu la connais, plus tu peux lui confier. Mais le dernier mot reste le tien ; c'est toi qui assumes le trade.</p>
+<p>Et deux choses à savoir pour que ça dure. <strong>Sa mémoire est courte</strong> : une conversation = un sujet ; quand elle devient longue, fais résumer et repars à neuf. <strong>La confiance se construit</strong> : au début, des petites tâches, et tu relis tout. Le dernier mot reste le tien.</p>
 <h2>1.4 Ce qu'elle fait pour ton trading</h2>
 <p>Plus tard, quand tu auras les bases des parties suivantes :</p>
 <ul>
-<li><strong>Ton journal et tes chiffres.</strong> Donne-lui ton journal de trading, demande ton espérance, ton drawdown, tes meilleurs et pires créneaux. Ce sont des calculs ; elle est meilleure que nous là-dessus.</li>
+<li><strong>Ton journal et tes chiffres.</strong> Donne-lui ton journal, demande ton espérance, ton drawdown, tes meilleurs et pires créneaux. Ce sont des calculs ; elle est meilleure que nous là-dessus.</li>
 <li><strong>Ta stratégie en règles.</strong> Écris ta stratégie en « si… alors… », elle t'aide à trouver les trous, puis à la backtester. De la logique et du backtest.</li>
-<li><strong>Tes outils.</strong> J'ai construit mon indicateur d'orderflow avec Claude : les gros acheteurs et vendeurs en bulles, et des signaux quand il y a absorption. 3 mois de taff. Et quand je vois un cas intéressant sur mon graphique, je l'écris en note et je la donne à Jarvis, mon assistant IA : pour exploiter le cas, en tirer des conclusions, voir si c'est pertinent. Rien de complexe : juste du backtest, et savoir utiliser l'IA.</li>
-<li><strong>La macro.</strong> Tous les matins, Jarvis prépare un brief macro : ce qui a changé, ce que le marché attendait, ce que ça peut vouloir dire pour les indices. Le pourquoi, c'est la macro ; les prix et les flux, c'est l'interprétation de ça.</li>
+<li><strong>Tes outils.</strong> J'ai construit mon indicateur d'orderflow avec Claude : les gros acheteurs et vendeurs en bulles, et des signaux quand il y a absorption. 3 mois de taff. Et quand je vois un cas intéressant sur mon graphique, je l'écris en note et je la donne à Jarvis, mon assistant IA, pour voir si c'est pertinent. Rien de complexe : juste du backtest, et savoir utiliser l'IA.</li>
+<li><strong>La macro.</strong> Tous les matins, Jarvis me prépare un brief macro : ce qui a changé, ce que le marché attendait, ce que ça peut vouloir dire pour les indices.</li>
 </ul>
-<p>Ce qu'elle ne fait pas : te donner le bon trade. Pas de bot miracle, pas de groupe de signaux. Si tu lui demandes « long ou short ? », tu auras une réponse, et elle ne vaudra rien. Elle ne voit pas ton graphique en direct ; et même si elle le voyait, le prix a toujours raison, pas l'IA.</p>
+<p>Ce qu'elle ne fait pas : te donner le bon trade. Pas de bot miracle, pas de groupe de signaux. Si tu lui demandes « long ou short ? », tu auras une réponse, et elle ne vaudra rien. Le prix a toujours raison, pas l'IA.</p>
 <h2>Exemples</h2>
-<p><strong>Le débutant qui pose la mauvaise question.</strong> « Le NQ va monter demain ? » L'IA répond avec des généralités sur les taux et la tech, sur un ton sûr. Rien d'exploitable, et potentiellement faux.</p>
-<p><strong>Le même, avec la bonne.</strong> « Je lis la partie 3 d'une ressource sur l'orderflow. Voici le passage sur l'absorption [collé]. Voici ce que j'ai compris : [ta phrase]. Qu'est-ce qui est juste, qu'est-ce qui manque ? Puis donne-moi un cas fictif à diagnostiquer. » Là, tu apprends.</p>
-<h2>Erreurs fréquentes</h2>
+<p><strong>La mauvaise question.</strong> « Le NQ va monter demain ? » L'IA répond des généralités sur les taux et la tech, sur un ton sûr. Rien d'exploitable.</p>
+<p><strong>La bonne.</strong> « Je lis la partie 3 d'une ressource sur l'orderflow. Voici le passage sur l'absorption [collé]. Voici ce que j'ai compris : [ta phrase]. Qu'est-ce qui est juste, qu'est-ce qui manque ? Puis donne-moi un cas fictif à diagnostiquer. » Là, tu apprends.</p>
+<h2>Erreurs fréquentes :</h2>
 <ul>
+<li><strong>Prendre l'abonnement le plus cher, ou à l'année.</strong> Celui à 20 $ par mois suffit largement pour commencer.</li>
+<li><strong>Sauter le prompt 1.</strong> Sans contexte, tu n'auras que du générique.</li>
 <li><strong>Lui demander un signal.</strong> Elle n'en sait pas plus que toi sur le prochain mouvement.</li>
-<li><strong>Croire un chiffre sans source.</strong> Une IA peut inventer une statistique avec assurance. Demande d'où ça vient ; mesure toi-même.</li>
-<li><strong>La laisser penser à ta place.</strong> Si elle écrit ta stratégie et que tu ne sais pas l'expliquer, ce n'est pas ta stratégie.</li>
+<li><strong>Croire un chiffre sans source.</strong> Demande d'où ça vient ; mesure toi-même.</li>
+<li><strong>La laisser penser à ta place.</strong> Si tu ne sais pas expliquer ta stratégie, ce n'est pas ta stratégie.</li>
 <li><strong>Lui donner tout ton ordinateur</strong>, ou tes identifiants. Un dossier, rien d'autre.</li>
-<li><strong>Tout garder dans une seule conversation.</strong> Un sujet par conversation ; le reste dans ton fichier d'instructions.</li>
 </ul>
 <h2>Transition vers la partie suivante</h2>
-<p>« Long ou short ? » : on a vu que la question ne vaut rien posée à une IA. Pour autant, elle ne vaut pas plus posée à toi-même, tant que tu ne sais pas ce qui fait bouger un prix.</p>
+<p>« Long ou short ? » : la question ne vaut rien posée à une IA. Pour autant, elle ne vaut pas plus posée à toi-même, tant que tu ne sais pas ce qui fait bouger un prix.</p>
 <p>Derrière chaque bougie, il y a des gens qui achètent et qui vendent. Qui sont-ils ? Pourquoi ils sont là ? Qu'est-ce qui les fait changer d'avis ? Tant que tu n'as pas ça, un graphique, ce sont des traits.</p>
-<p>C'est la partie 2 : d'où vient l'argent sur les marchés, et pourquoi les prix bougent. Et si un passage coince, tu sais maintenant à qui demander.</p>
+<p>C'est la partie 2. Et si un passage coince, tu sais maintenant à qui demander.</p>
 <hr>
-<div class="pager"><span></span><a href="2.html">Partie suivante →</a></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script></body></html>
+<div class="pager"><span></span><a href="2.html">Partie suivante →</a></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script><script>
+document.querySelectorAll('.copy-code').forEach(button => {
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(button.parentElement.querySelector('code').textContent);
+      button.textContent = 'Copié';
+      setTimeout(() => { button.textContent = 'Copier'; }, 1600);
+    } catch (error) {
+      button.textContent = 'Copie indisponible';
+      setTimeout(() => { button.textContent = 'Copier'; }, 1600);
+    }
+  });
+});
+</script></body></html>

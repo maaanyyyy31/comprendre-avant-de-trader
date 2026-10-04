@@ -1,5 +1,9 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>5. Les flux · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="active">5. Les flux</a><a href="6.html" class="">6. Exercices, IA et sources</a></nav></header><main id="contenu"><h1>5. Les flux : ce qui pousse le marché en dehors du graphique</h1>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>5. Les flux · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="active">5. Les flux</a><a href="6.html" class="">6. Prompts, conclusion et merci</a></nav></header><main id="contenu"><h1>5. Les flux : ce qui pousse le marché en dehors du graphique</h1>
 <p>🟡 → 🔴 · Quatre notions, dans l'ordre : les flux et la macro · la dispersion · la volatilité · les options</p>
+<h2>Ouvrir les yeux</h2>
+<p>Cette partie n'a pas pour but de te faire trader les options ni la macro. Elle a pour but de t'ouvrir les yeux.</p>
+<p>Le prix ne contient pas toute l'information. Derrière ton graphique, il y a des salariés qui épargnent à chaque paie, des fonds qui rééquilibrent, des entreprises qui rachètent leurs actions, des fonds qui suivent la tendance, des dealers qui couvrent des options. La finance, c'est compliqué ; et c'est une bonne nouvelle, parce que chaque mécanisme compris est un edge possible, une compréhension de plus que la plupart n'ont pas.</p>
+<p>Prends ce qui suit comme un tour d'horizon. Tu n'as pas à tout maîtriser ; je t'encourage simplement à aller plus loin que le graphique et l'analyse technique.</p>
 <h2>Ce que tu sauras faire</h2>
 <ul>
 <li>Savoir qui achète et qui vend en permanence, sans regarder le prix.</li>
@@ -76,12 +80,11 @@
 <li><strong>VIX très haut, puis qui retombe</strong> : c'est souvent le vrai signal de reprise du risque, plus que le prix lui-même.</li>
 </ul>
 <p>C'est pour ça qu'une même stratégie varie selon l'actif, la volatilité et le contexte ; ça se backteste.</p>
-<p>Et un réflexe à prendre : avant une grosse annonce, la volatilité implicite est déjà chère. Le marché a déjà payé pour l'événement. D'où le fait qu'on peut avoir raison sur la nouvelle, et perdre quand même.</p>
 <p>Cette volatilité implicite, on l'a lue dans le prix des options. Et les options, c'est probablement le plus gros acteur invisible de ta séance.</p>
 <hr>
 <h2>Notion 4 — Les options</h2>
 <h3>La théorie</h3>
-<p>Reprenons les pommes. Tu fais des tartes, et tu as peur que le prix des pommes monte cet hiver. Tu vas voir un producteur : je te paie 5 € aujourd'hui, et en échange, jusqu'au 31 décembre, j'ai le droit de t'acheter 100 kg à 1 € le kilo, quel que soit le prix du marché.</p>
+<p>Reprenons nos pommes. Tu fais des tartes, et tu as peur que le prix des pommes monte cet hiver. Tu vas voir un producteur : je te paie 5 € aujourd'hui, et en échange, jusqu'au 31 décembre, j'ai le droit de t'acheter 100 kg à 1 € le kilo, quel que soit le prix du marché.</p>
 <ul>
 <li>Les pommes montent à 1,50 € : tu utilises ton droit, tu achètes à 1 € ce qui en vaut 1,50. Tu gagnes 50 €, moins les 5 € payés.</li>
 <li>Les pommes restent à 1 € ou baissent : tu n'utilises pas ton droit. Tu as perdu 5 €, et c'est tout.</li>
@@ -100,6 +103,8 @@
 <p><em>(Les deux autres, pour ta culture : le <strong>theta</strong>, ce que coûte chaque jour qui passe, et le <strong>vega</strong>, ce que pèse la volatilité implicite.)</em></p>
 <figure id="figure-8" class="figure anim" data-state="4"><figcaption>Figure 8 · Delta et échéance</figcaption><div class="scene-wrap"><svg class="scene" viewBox="0 0 640 240" role="img" aria-label="Le delta d'un call selon le prix, plus raide quand l'échéance approche"><defs><marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="tete"/></marker></defs><line x1="50" y1="205" x2="620" y2="205" class="grille k1"/><line x1="50" y1="30" x2="50" y2="205" class="grille k1"/><text x="620" y="225" class="doux k1" font-size="12" text-anchor="end">prix du sous-jacent</text><text x="56" y="26" class="doux k1" font-size="12" text-anchor="start">delta du call (0 → 1)</text><line x1="330" y1="30" x2="330" y2="205" class="repere k1"/><text x="336" y="44" class="or k1" font-size="12" text-anchor="start">strike</text><polyline points="60,196.7 70,196.2 80,195.6 90,195.0 100,194.2 110,193.4 120,192.4 130,191.3 140,190.1 150,188.6 160,187.0 170,185.2 180,183.2 190,180.9 200,178.4 210,175.6 220,172.5 230,169.1 240,165.3 250,161.3 260,157.0 270,152.3 280,147.4 290,142.3 300,136.9 310,131.4 320,125.7 330,120.0 340,114.3 350,108.6 360,103.1 370,97.7 380,92.6 390,87.7 400,83.0 410,78.7 420,74.7 430,70.9 440,67.5 450,64.4 460,61.6 470,59.1 480,56.8 490,54.8 500,53.0 510,51.4 520,49.9 530,48.7 540,47.6 550,46.6 560,45.8 570,45.0 580,44.4 590,43.8 600,43.3 610,42.9" class="prix draw k2" pathLength="1" fill="none"/><text x="90" y="180" class="k1" font-size="13" text-anchor="start">loin : delta ≈ 0</text><text x="345" y="125" class="k2" font-size="13" text-anchor="start">près : il varie vite</text><polyline points="60,200.0 70,200.0 80,200.0 90,200.0 100,200.0 110,200.0 120,200.0 130,200.0 140,200.0 150,200.0 160,200.0 170,200.0 180,200.0 190,199.9 200,199.9 210,199.8 220,199.6 230,199.4 240,198.9 250,198.1 260,196.8 270,194.5 280,190.6 290,184.4 300,174.6 310,160.4 320,141.7 330,120.0 340,98.3 350,79.6 360,65.4 370,55.6 380,49.4 390,45.5 400,43.2 410,41.9 420,41.1 430,40.6 440,40.4 450,40.2 460,40.1 470,40.1 480,40.0 490,40.0 500,40.0 510,40.0 520,40.0 530,40.0 540,40.0 550,40.0 560,40.0 570,40.0 580,40.0 590,40.0 600,40.0 610,40.0" class="vwap draw k3" pathLength="1" fill="none"/><text x="318" y="55" class="or k3" font-size="13" text-anchor="end">échéance proche</text><text x="620" y="150" class="doux k4" font-size="12" text-anchor="end">dépend aussi de la volatilité</text></svg></div><ol><li><span class="step">01</span><strong>Loin du strike</strong><p>Le delta d’un call peut être proche de zéro.</p></li><li><span class="step">02</span><strong>Près du strike</strong><p>Le delta varie davantage quand le prix bouge.</p></li><li><span class="step">03</span><strong>Échéance proche</strong><p>Cette variation peut devenir plus rapide.</p></li><li><span class="step">04</span><strong>Limite</strong><p>La courbe dépend aussi du contrat et de la volatilité.</p></li></ol><button type="button" class="rejouer">↻ Rejouer</button><small>Schéma pédagogique fictif · les vignettes s’allument avec l’animation</small></figure>
 <p>Ce que ça pèse aujourd'hui : en 2025, 15,2 milliards de contrats d'options ont été échangés aux États-Unis, 26 % de plus qu'en 2024. Sur les options du S&P 500, 59 % du volume porte sur des options qui expirent le jour même. Ce n'est plus un marché de niche.</p>
+<p>Et pour situer qui opère où, quelques ordres de grandeur :</p>
+<figure id="figure-17" class="figure anim" data-state="4"><figcaption>Figure 17 · Combien d&#x27;argent circule</figcaption><div class="scene-wrap"><svg class="scene" viewBox="0 0 640 240" role="img" aria-label="En 2025 : 30,6 milliards de contrats de futures et 88,6 milliards d'options dans le monde, 119,3 au total ; 15,2 milliards d'options américaines ; 59 % du volume SPX en 0DTE"><defs><marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="tete"/></marker></defs><text x="12" y="28" class="or k1" font-size="14" text-anchor="start">Contrats échangés en 2025</text><text x="12" y="50" class="k1" font-size="12" text-anchor="start">Futures, monde</text><rect x="12" y="56" width="76.9" height="14" rx="2" class="barre grow k1"/><text x="96.9" y="68" class="doux k1" font-size="12" text-anchor="start">30,6 milliards</text><text x="12" y="92" class="k1" font-size="12" text-anchor="start">Options, monde</text><rect x="12" y="98" width="222.8" height="14" rx="2" class="barre grow k1"/><text x="242.8" y="110" class="doux k1" font-size="12" text-anchor="start">88,6 milliards</text><text x="12" y="134" class="k2" font-size="12" text-anchor="start">Total, monde</text><rect x="12" y="140" width="300.0" height="14" rx="2" class="barre grow k2"/><text x="320.0" y="152" class="doux k2" font-size="12" text-anchor="start">119,3 milliards</text><text x="12" y="176" class="k3" font-size="12" text-anchor="start">Options américaines</text><rect x="12" y="182" width="38.2" height="14" rx="2" class="barre grow k3"/><text x="58.2" y="194" class="doux k3" font-size="12" text-anchor="start">15,2 milliards</text><line x1="440" y1="14" x2="440" y2="200" class="grille k4"/><text x="456" y="28" class="or k4" font-size="14" text-anchor="start">Options SPX</text><text x="456" y="50" class="doux k4" font-size="12" text-anchor="start">part du volume en 0DTE</text><rect x="456" y="66" width="168" height="22" rx="4" class="cadre k4"/><rect x="456" y="66" width="99.1" height="22" rx="4" class="or-plein grow k4"/><text x="540" y="120" class="or k4" font-size="26" text-anchor="middle">59 %</text><text x="540" y="142" class="doux k4" font-size="12" text-anchor="middle">expirent le jour même</text><text x="320" y="226" class="or k4" font-size="13" text-anchor="middle">Des contrats, pas des dollars</text></svg></div><ol><li><span class="step">01</span><strong>Monde · 2025</strong><p>Futures : 30,6 milliards de contrats ; options : 88,6 milliards (FIA).</p></li><li><span class="step">02</span><strong>Total</strong><p>119,3 milliards de contrats échangés dans le monde en 2025 (FIA).</p></li><li><span class="step">03</span><strong>Options américaines</strong><p>15,2 milliards de contrats en 2025 (OCC).</p></li><li><span class="step">04</span><strong>SPX · 0DTE</strong><p>59 % du volume SPX en 2025 expire le jour même (Cboe).</p></li></ol><button type="button" class="rejouer">↻ Rejouer</button><small>Chiffres réels · sources en fin de ressource</small></figure>
 <h3>La pratique</h3>
 <p>Pourquoi ça nous concerne, nous qui tradons des futures ?</p>
 <p>Quand un particulier achète un call, quelqu'un le lui vend ; souvent un dealer. Le dealer ne veut pas parier, il veut encaisser l'écart entre l'achat et la vente. Donc il couvre sa position sur le sous-jacent, en achetant ou en vendant des futures. Et comme le delta bouge avec le prix, il doit réajuster en permanence.</p>
@@ -116,14 +121,14 @@
 <li><strong>Le niveau.</strong> Le <strong>GEX</strong> (gamma exposure) estime, strike par strike, combien de gamma les dealers portent, et en tire des niveaux. C'est un niveau de plus sur ta carte ; il vaut surtout quand il tombe au même endroit qu'un POC ou une VWAP.</li>
 <li><strong>Le flux.</strong> Au contact, rien ne change : tu lis l'absorption. Un niveau GEX sans absorption ne vaut rien.</li>
 </ol>
-<blockquote>
+<aside class="callout callout-warning">
 <p><strong>La carte n'est pas le territoire</strong></p>
 <p>Personne ne connaît la vraie position des dealers. Les outils GEX <em>supposent</em> qui a acheté et qui a vendu chaque option. Des spécialistes des flux, comme VolSignals, contestent cette convention : le mécanisme de couverture est réel, mais le signe des niveaux calculés peut être faux. Retiens le mécanisme ; méfie-toi des niveaux affichés au point près.</p>
-</blockquote>
-<blockquote>
-<p>[!important] Rien de magique dans les options</p>
+</aside>
+<aside class="callout callout-important">
+<p><strong>Rien de magique dans les options</strong></p>
 <p>Elles ne sont pas nécessaires pour être rentable. Beaucoup de traders gagnent leur vie sans jamais regarder une carte gamma. Elles ajoutent une couche de contexte ; pas un point d'entrée, pas une garantie. Si tu n'as pas encore un système qui marche sur le prix, le volume et le flux, commence par là. Les options viendront après, ou jamais, et ce sera très bien aussi.</p>
-</blockquote>
+</aside>
 <h2>Exemples</h2>
 <p><strong>Petit calcul pour fixer les idées.</strong> Le NQ est à 20 000. Tu achètes un call de strike 20 100 qui expire ce soir, pour une prime de 20 points.</p>
 <ul>
@@ -132,16 +137,29 @@
 <li>Le NQ finit à 20 120 : ton call vaut 20 points. Tu as eu raison sur le sens, et tu n'as rien gagné.</li>
 </ul>
 <p>Ce dernier cas, c'est toute la difficulté des options : il faut avoir raison sur le sens, sur l'ampleur, et sur le délai.</p>
-<h2>Erreurs fréquentes</h2>
+<h2>Erreurs fréquentes :</h2>
 <ul>
 <li><strong>Croire qu'il faut trader des options pour s'en servir.</strong> Leur lecture suffit.</li>
 <li><strong>Confondre les flux mécaniques et les CTA.</strong> Les premiers sont réguliers et insensibles au prix ; les CTA suivent la tendance, donc vendent en marché baissier.</li>
 <li><strong>Prendre un niveau GEX pour un support garanti.</strong> C'est une estimation.</li>
 <li><strong>Lire un VIX qui monte comme un signal de baisse.</strong> C'est un signal d'amplitude.</li>
-<li><strong>Acheter des options juste avant une annonce.</strong> La protection est déjà chère.</li>
 <li><strong>Croire que tout ça est nécessaire pour être rentable.</strong></li>
 </ul>
 <h2>Transition vers la fin</h2>
-<p>Tu sais comment le prix bouge et où il se juge juste (partie 3), comment mesurer si ce que tu fais marche (partie 4), et qui pousse en dehors du graphique (partie 5). C'est une introduction : l'essentiel est là, le reste c'est à toi de creuser, et de la pratique. Les exercices qui suivent sont faits pour ça, et ton IA de la partie 1 peut te les corriger.</p>
+<p>Tu sais comment le prix bouge et où il se juge juste (partie 3), comment mesurer si ce que tu fais marche (partie 4), et qui pousse en dehors du graphique (partie 5). Tu as vu que le graphique n'est qu'une partie de l'histoire ; à toi de choisir ce que tu veux creuser.</p>
+<p>C'est une introduction : l'essentiel est là, le reste, c'est à toi de le creuser, et de la pratique. La dernière page rassemble tous les prompts et tout ce qu'on t'a demandé de faire en chemin.</p>
 <hr>
-<div class="pager"><a href="4.html">← Partie précédente</a><a href="6.html">Partie suivante →</a></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script></body></html>
+<div class="pager"><a href="4.html">← Partie précédente</a><a href="6.html">Partie suivante →</a></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script><script>
+document.querySelectorAll('.copy-code').forEach(button => {
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(button.parentElement.querySelector('code').textContent);
+      button.textContent = 'Copié';
+      setTimeout(() => { button.textContent = 'Copier'; }, 1600);
+    } catch (error) {
+      button.textContent = 'Copie indisponible';
+      setTimeout(() => { button.textContent = 'Copier'; }, 1600);
+    }
+  });
+});
+</script></body></html>
