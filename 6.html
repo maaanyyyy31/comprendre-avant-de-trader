@@ -12,7 +12,7 @@
 <h2>Ce qu'on t'a demandé de faire</h2>
 <p>Récapitulé ici, dans l'ordre :</p>
 <ol>
-<li><strong>Installer ton IA</strong> : l'application Claude ou ChatGPT, l'abonnement à environ 20 $ par mois, puis les trois prompts (partie 1).</li>
+<li><strong>Installer ton IA</strong> : l'application Claude ou ChatGPT, l'abonnement à environ 20 $ par mois, puis le prompt d'installation (partie 1).</li>
 <li><strong>Pendant deux semaines, n'entrer aucun trade</strong> : noter 20 fois où le prix touche une de tes zones, avec ton verdict (absorption, trapped, ou le prix qui passe), puis regarder ce que le prix a fait ensuite (partie 3).</li>
 <li><strong>Lire chaque bougie en trois temps</strong> : observations, analyses, conclusion (partie 3).</li>
 <li><strong>Travailler sur le volume profile de la veille</strong>, pas sur celui du jour qui se forme encore (partie 3).</li>
@@ -23,82 +23,50 @@
 <li><strong>Avant la séance, 30 secondes</strong> : NQ contre ES, les secteurs qui portent, et le calendrier (partie 5).</li>
 </ol>
 <h2>Tous les prompts</h2>
-<h3>Les trois prompts d'installation (partie 1)</h3>
-<p>Dans l'ordre, dans l'application. Le troisième se colle dans l'agent, dans VS Code, avec ton résumé « Mon contexte ».</p>
-<p><strong>Prompt 1 — Qu'elle te connaisse</strong></p>
+<h3>Le prompt d'installation (partie 1)</h3>
+<p>Dans Claude Code ou Codex, ouvert sur ton dossier de travail.</p>
 <pre><code>Je débute avec une IA et je veux qu&#x27;elle me serve vraiment, en particulier
-pour le trading. Avant de me conseiller quoi que ce soit, apprends à me
-connaître.
+pour le trading. Ce dossier sera notre espace de travail : ne touche à rien
+en dehors, et ne me demande jamais de taper une commande.
 
-Pose-moi des questions, en français simple, par petits groupes de 3 ou 4.
-Commence par les plus utiles (la règle des 20/80 : celles dont la réponse
-change le plus la façon dont tu vas m&#x27;aider). Couvre au moins :
-- ce que je fais dans la vie, mon temps disponible, mon niveau en informatique ;
-- mon niveau en trading, mes marchés, mon style, ce que j&#x27;ai déjà essayé ;
-- mes projets en cours, trading ou non, et celui qui compte le plus ;
-- à quoi je veux que tu me serves concrètement : apprendre, tenir un journal,
-  analyser mes trades, tester une stratégie, coder, m&#x27;organiser… ;
-- ce qui m&#x27;a fait perdre du temps ou de l&#x27;argent jusqu&#x27;ici ;
-- comment je préfère qu&#x27;on me réponde (court, détaillé, avec exemples…).
+1. Apprends à me connaître. Pose-moi des questions en français simple, par
+   groupes de 3 ou 4, les plus utiles d&#x27;abord (la règle des 20/80 : celles
+   dont la réponse change le plus ta façon de m&#x27;aider). Couvre au moins :
+   - ce que je fais dans la vie, mon temps disponible, mon niveau en
+     informatique ;
+   - mon niveau en trading, mes marchés, mon style, ce que j&#x27;ai déjà essayé ;
+   - mes projets en cours, trading ou non, et celui qui compte le plus ;
+   - à quoi tu dois me servir : apprendre, tenir un journal, analyser mes
+     trades, tester une stratégie, coder, m&#x27;organiser… ;
+   - ce qui m&#x27;a fait perdre du temps ou de l&#x27;argent jusqu&#x27;ici ;
+   - comment je préfère qu&#x27;on me réponde (court, détaillé, avec exemples…).
+   Relance quand une réponse est vague. Arrête-toi quand tu as l&#x27;essentiel.
 
-Relance quand une réponse est vague. Arrête-toi quand tu as l&#x27;essentiel :
-ne me noie pas sous les questions.
+2. Enregistre ce contexte pour ne jamais me le redemander : crée ton fichier
+   d&#x27;instructions à la racine de ce dossier (CLAUDE.md si tu es Claude,
+   AGENTS.md si tu es Codex). Une page maximum, en puces :
+   - qui je suis : niveau, marchés, projets, ce que j&#x27;attends de toi ;
+   - comment me répondre : français simple, court par défaut, un exemple
+     quand c&#x27;est utile ; dis-le quand tu n&#x27;es pas sûr, et sépare ce qui est
+     vérifié de ce qui est supposé ;
+   - comment travailler : avant une grosse tâche, un plan court, la solution
+     la plus simple d&#x27;abord, et mon accord ; une étape à la fois, vérifiée ;
+     rien supprimé ni écrasé sans mon accord ; jamais de mot de passe ni de
+     clé ;
+   - économiser mes tokens : ne lire que les fichiers utiles à la tâche ; pas
+     de long résumé de ce que je viens d&#x27;écrire ; quand une conversation
+     devient longue, proposer d&#x27;en ouvrir une neuve ; proposer d&#x27;ajouter ici
+     ce que je répète souvent ;
+   - le trading : jamais de signal d&#x27;achat ou de vente ; m&#x27;aider à
+     comprendre, calculer, tester et tenir mon journal.
+   Montre-le-moi avant de l&#x27;enregistrer.
 
-À la fin, écris un résumé intitulé « Mon contexte », en une page maximum,
-que je pourrai te redonner plus tard. Puis dis-moi les trois façons dont tu
-peux m&#x27;aider le plus, dans l&#x27;ordre.</code><button type="button" class="copy-code">Copier</button></pre>
-<p><strong>Prompt 2 — Ton espace de travail</strong></p>
-<pre><code>Maintenant, aide-moi à installer mon espace de travail, une étape à la fois,
-sans jamais me demander de taper une commande. Attends que je te dise
-« c&#x27;est fait » avant de passer à l&#x27;étape suivante.
+3. Crée seulement les dossiers vraiment utiles à mes projets, et un fichier
+   « Bien démarrer » : ce que contient chaque dossier, et comment reprendre
+   notre travail la prochaine fois.
 
-1. Demande-moi si je suis sur Windows ou Mac.
-2. Aide-moi à créer UN dossier de travail, facile à retrouver (par exemple
-   « Trading-IA » dans Documents). Propose à l&#x27;intérieur une organisation
-   minimale adaptée à « Mon contexte » : seulement les dossiers vraiment
-   utiles, avec leur rôle en une ligne.
-3. Guide-moi pour installer VS Code depuis son site officiel, écran par écran,
-   puis pour y ouvrir ce dossier.
-4. Guide-moi pour installer dans VS Code l&#x27;extension officielle de l&#x27;agent
-   de mon abonnement (Claude Code pour Claude, Codex pour ChatGPT), et pour
-   m&#x27;y connecter avec mon compte.
-5. Propose-moi au plus trois autres extensions ou plugins vraiment utiles
-   pour débuter, en expliquant à quoi sert chacun. Je choisis ; n&#x27;en impose
-   aucun.
-
-Ne déplace, ne supprime et n&#x27;écrase jamais mes fichiers existants.
-Termine en me montrant comment ouvrir l&#x27;agent dans VS Code.</code><button type="button" class="copy-code">Copier</button></pre>
-<p><strong>Prompt 3 — Son fichier d'instructions</strong></p>
-<pre><code>Crée à la racine de ce dossier mon fichier d&#x27;instructions (CLAUDE.md si tu es
-Claude, AGENTS.md si tu es Codex), à partir de « Mon contexte » ci-dessous.
-Montre-le-moi avant de l&#x27;enregistrer. Court : une page maximum, en puces.
-
-Il contient :
-1. Qui je suis : niveau, marchés, projets, ce que j&#x27;attends de toi.
-2. Comment me répondre : en français simple ; court par défaut, détaillé si je
-   le demande ; un exemple quand c&#x27;est utile ; dis-le quand tu n&#x27;es pas sûr,
-   et distingue ce qui est vérifié de ce qui est supposé.
-3. Comment travailler :
-   - avant une tâche de plus de quelques étapes, propose un plan court, la
-     solution la plus simple en premier, et attends mon accord ;
-   - une étape à la fois ; vérifie que chaque étape marche avant la suivante ;
-   - ne travaille que dans ce dossier ; ne supprime ni n&#x27;écrase rien sans
-     mon accord ;
-   - jamais de mot de passe, de clé ni de donnée de compte de trading.
-4. Économiser mes tokens et garder de bonnes réponses :
-   - ne relis que les fichiers utiles à la tâche, pas tout le dossier ;
-   - pas de longs résumés de ce que je viens d&#x27;écrire ;
-   - quand la conversation devient longue ou change de sujet, propose-moi de
-     résumer les points clés et de repartir dans une nouvelle conversation ;
-   - ce que je te répète souvent, propose de l&#x27;ajouter à ce fichier.
-5. Le trading : ne me donne jamais de signal d&#x27;achat ou de vente ; aide-moi
-   à comprendre, à calculer, à tester et à tenir mon journal.
-
-Termine par un fichier « Bien démarrer » : où sont mes projets, ce que
-contient chaque dossier, et comment reprendre notre travail la prochaine fois.
-
-Mon contexte :
-[colle ici ton résumé]</code><button type="button" class="copy-code">Copier</button></pre>
+4. Termine en me disant les trois façons dont tu peux m&#x27;aider le plus, dans
+   l&#x27;ordre.</code><button type="button" class="copy-code">Copier</button></pre>
 <h3>Apprendre cette ressource avec ton IA</h3>
 <p>Donne-lui le passage que tu viens de lire, puis colle ce texte :</p>
 <pre><code>Je veux apprendre cette introduction au trading, pas recevoir des signaux.
@@ -144,9 +112,9 @@ Pose-moi des questions plutôt que de deviner.</code><button type="button" class
 <p>J'espère que ça t'a aidé.</p>
 <p><strong>Pour me soutenir :</strong></p>
 <ul>
-<li><strong>le mentorat</strong>, 70 € par mois ;</li>
-<li><strong>des petits bouts de code</strong> : je pense vendre des morceaux de Jarvis et de mes projets, comme mon architecture de second cerveau (Obsidian, vault), si ça peut intéresser ;</li>
-<li><strong>surtout, je travaille sur un projet pour optimiser l'apprentissage.</strong> Cette ressource te prendra peut-être du temps à digérer, à intégrer dans ta mémoire ; ça dépendra de plein de facteurs. Avec le système, tu retiendras mieux et plus vite : tu gagnes du temps, de l'énergie et de la connaissance.</li>
+<li><strong>Le mentorat, 70 € par mois.</strong> Un suivi écrit sur le Discord : tu postes tes graphiques et tes questions, je te corrige une étape à la fois, sur ton process, pas sur le mien.</li>
+<li><strong>Des petits outils.</strong> Je pense vendre des morceaux de Jarvis et de mes projets, si ça peut intéresser : l'indicateur d'orderflow (les gros acheteurs et vendeurs en bulles, les signaux d'absorption), le brief macro du matin (ce qui a changé, ce que le marché attendait), et l'architecture du second cerveau (un vault Obsidian rangé pour que l'IA retrouve tes notes, tes trades et tes décisions). Dis-moi sur le Discord lequel t'intéresse : je commencerai par le plus demandé.</li>
+<li><strong>Et surtout, bientôt : Learning.</strong> Un projet pour optimiser l'apprentissage. Cette ressource te prendra peut-être du temps à digérer, à intégrer dans ta mémoire ; ça dépendra de plein de facteurs. Learning part d'une idée simple : on retient ce qu'on reconstruit soi-même, pas ce qu'on relit. Tu lis, tu fermes, tu écris ce que tu as compris ; ensuite seulement, il te montre ce qui manque et t'interroge pour que ça reste. Tu retiens mieux et plus vite : tu gagnes du temps, de l'énergie et de la connaissance. L'annonce se fera sur le Discord.</li>
 </ul>
 <h2 id="sources">Sources</h2>
 <p><strong>Partie 1 — l'IA</strong></p>
@@ -193,9 +161,7 @@ Pose-moi des questions plutôt que de deviner.</code><button type="button" class
 <p><strong>Images</strong></p>
 <ul>
 <li>Parquet du Chicago Board of Trade, 1973 — U.S. Department of Agriculture / National Archives, domaine public, via Wikimedia Commons.</li>
-<li>Clavier Bloomberg — Cariafraweb, domaine public, via Wikimedia Commons.</li>
 <li>Bourse de Francfort — Thomas Richter (THOMAS~commonswiki), modifiée par aka, licence CC BY-SA 3.0, via Wikimedia Commons.</li>
-<li>Interface de VS Code — Cycling2, CC0 1.0, via Wikimedia Commons.</li>
 <li>Graphiques GC, CL et 6E : captures personnelles. Schémas et animations : faits pour cette ressource.</li>
 </ul><div class="pager"><a href="5.html">← Partie précédente</a><span></span></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script><script>
 document.querySelectorAll('.copy-code').forEach(button => {
