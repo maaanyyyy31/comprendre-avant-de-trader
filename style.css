@@ -51,3 +51,8 @@
 .choix button[aria-pressed="true"]{background:#335249;border-color:#f1ddaf}
 
 #figure-14>small:last-child,#figure-15>small:last-child{display:none}
+
+/* Figure 18 : plus large que la colonne, en relief. */
+.scene .dalle{fill:url(#dalle18);stroke:#5d8278}
+@media(min-width:1000px){#figure-18{max-width:none;width:min(1100px,calc(100vw - 3rem));margin-left:calc(50% - min(550px,calc(50vw - 1.5rem)))}}
+@media(max-width:680px){#figure-18 .scene{min-width:760px}}

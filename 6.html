@@ -1,4 +1,4 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>6. Prompts, conclusion et merci · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="">5. Les flux</a><a href="6.html" class="active">6. Prompts, conclusion et merci</a></nav></header><main id="contenu"><h1>Fin — tes prompts, ce qu'on retient, merci</h1>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>6. Prompts, TradingView et merci · Formation trading</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><a class="brand" href="index.html">Formation trading</a><nav aria-label="Sommaire"><a href="1.html" class="">1. L’IA</a><a href="2.html" class="">2. De la finance au trading</a><a href="3.html" class="">3. La mécanique des prix</a><a href="4.html" class="">4. Maths, risque, edge et système</a><a href="5.html" class="">5. Les flux</a><a href="6.html" class="active">6. Prompts, TradingView et merci</a></nav></header><main id="contenu"><h1>Fin — tes prompts, TradingView, merci</h1>
 <h2>Ce qu'on a vu</h2>
 <p>Cinq parties, une seule idée : <strong>comprendre avant de trader.</strong></p>
 <ul>
@@ -67,25 +67,6 @@ en dehors, et ne me demande jamais de taper une commande.
 
 4. Termine en me disant les trois façons dont tu peux m&#x27;aider le plus, dans
    l&#x27;ordre.</code><button type="button" class="copy-code">Copier</button></pre>
-<h3>Apprendre cette ressource avec ton IA</h3>
-<p>Donne-lui le passage que tu viens de lire, puis colle ce texte :</p>
-<pre><code>Je veux apprendre cette introduction au trading, pas recevoir des signaux.
-Interroge-moi en français simple, une question à la fois, sur ses cinq parties :
-1. IA, 2. finance et trading, 3. mécanique des prix, 4. maths et risque,
-5. flux, volatilité et options.
-
-Commence par me demander quelle partie j&#x27;ai lue et ce que je crois avoir compris.
-Laisse-moi répondre avant de donner une définition, une hiérarchie ou la solution.
-Après ma réponse, indique ce qui est juste, ce qui manque et ce qui reste une
-hypothèse. Appuie-toi uniquement sur le passage que je t&#x27;ai fourni ; si tu ne
-l&#x27;as pas, demande-le-moi au lieu d&#x27;inventer. Pose ensuite une courte situation
-à interpréter, puis demande ce qui invaliderait mon interprétation.
-
-Pour les calculs, fais-moi poser la formule, vérifier les unités et inclure les
-frais. Pour les marchés, sépare observation, interprétation et décision.
-Ne promets jamais un résultat ni un taux de réussite. À la fin, demande-moi où
-cette compréhension pourrait changer une décision, ou pourquoi nulle part encore.
-Termine par deux points à revoir, sans note ni classement.</code><button type="button" class="copy-code">Copier</button></pre>
 <h3>Calculer les chiffres de ton journal (partie 4)</h3>
 <pre><code>Voici mon journal de trading [colle-le, ou joins le fichier]. Chaque ligne
 est un trade avec son résultat en R (ou en argent et le risque pris).
@@ -105,6 +86,36 @@ Ne la juge pas sur le fond. Dis-moi seulement :
    si je l&#x27;ai écrit ;
 4. comment la backtester simplement, la méthode la plus simple d&#x27;abord.
 Pose-moi des questions plutôt que de deviner.</code><button type="button" class="copy-code">Copier</button></pre>
+<h2>Prendre en main TradingView</h2>
+<p>TradingView, c'est la plateforme de graphiques que tu croiseras partout, et celle de tous les exemples de cette ressource. La version gratuite suffit pour commencer ; les indicateurs de volume détaillés (footprint, profils) marchent mieux, ou seulement, avec un abonnement Premium.</p>
+<p><strong>Un graphique propre.</strong> Tout ce qui est inutile sur un graphique, ça s'enlève. Premier réflexe : clic droit sur un indicateur, puis décoche « valeurs de l'indicateur » et « entrées de l'indicateur ». Et plutôt que l'indicateur volume en bas de l'écran, essaie les bougies de volume : leur épaisseur varie avec le volume échangé.</p>
+<p><strong>Plusieurs unités de temps côte à côte.</strong> Clique à gauche du nom de ta mise en page pour afficher plusieurs graphiques sur le même écran. Alt gauche + Entrée (ou un clic gauche) pour passer de l'un à l'autre. Un exemple d'organisation :</p>
+<ul>
+<li><strong>M5</strong> : l'exécution. Le matin, je ne le regarde pas tout de suite ; je commence par la grosse image ;</li>
+<li><strong>M15</strong> : la structure du marché et le scénario de la journée ;</li>
+<li><strong>le profil de la veille</strong> (volume profile daily, en 10 min) : chaque matin, tendance ou range, VAH, VAL, POC ;</li>
+<li><strong>le profil de la semaine</strong> (en 30 min) : je trace mes zones une fois par semaine, puis chaque matin je regarde très vite si le prix en a touché une.</li>
+</ul>
+<p>Avec deux écrans, deux mises en page : une pour la vue globale (les profils, les niveaux, le H4), une pour l'exécution (M5 et M15). Crée la seconde avec « Nouvelle mise en page », puis clic droit entre les deux onglets pour les synchroniser avec la même couleur : le symbole change partout d'un coup.</p>
+<figure class="capture"><a href="captures/2026-08-17_ES-ecran-vue-globale.png" class="zoom" title="Agrandir"><img src="captures/2026-08-17_ES-ecran-vue-globale.png" alt="Écran 1, la vue globale (ES, 17 août 2026) : profil de la veille, profil de la semaine, niveaux, et le graphique de fond en dessous." loading="lazy"></a><figcaption>Écran 1, la vue globale (ES, 17 août 2026) : profil de la veille, profil de la semaine, niveaux, et le graphique de fond en dessous.</figcaption></figure>
+<figure class="capture"><a href="captures/2026-08-17_GC-ecran-execution.png" class="zoom" title="Agrandir"><img src="captures/2026-08-17_GC-ecran-execution.png" alt="Écran 2, l&#x27;exécution (GC, 17 août 2026) : le M5 avec ses zones et ses signaux, et une unité de temps plus large à côté." loading="lazy"></a><figcaption>Écran 2, l&#x27;exécution (GC, 17 août 2026) : le M5 avec ses zones et ses signaux, et une unité de temps plus large à côté.</figcaption></figure>
+<p><strong>Un code couleur par unité de temps, toujours le même.</strong> Vert = monthly, rose = weekly, jaune = daily (et tout ce qui vient du profil de la veille), bleu = H4, blanc = M15. Tu te relis en une seconde. Et si tu postes tes graphiques sur le Discord, on parle la même langue : si ton H4 est en jaune fluo alors que pour moi c'est du daily, on va vite s'y perdre. Sans pour autant devenir des clones.</p>
+<p><strong>Des modèles, pour ne rien refaire deux fois.</strong> Enregistre tes indicateurs en modèle (l'icône des cubes, à côté des indicateurs), et tes outils de dessin aussi : un modèle pour les rectangles, un pour les traits, un pour les fibos. Les outils qui servent le plus : long / short, rectangle, fibo, droite, droite verticale, pinceau, et le <strong>callout</strong>, pour annoter un graphique en pointant exactement ce que tu montres.</p>
+<p><strong>Des alertes, plutôt que fixer l'écran.</strong> Mets des alertes sur tes niveaux et sur tes indicateurs : TradingView te prévient quand le prix arrive à ta zone.</p>
+<p><strong>Partager un graphique.</strong> Le bouton de capture donne un lien vers une image de ton graphique. Avec le symbole, l'unité de temps, la date et l'heure, c'est ce qu'il faut pour poser une question, sur le Discord comme à ton IA.</p>
+<h3>Mes indicateurs, gratuits</h3>
+<p>Tous sur TradingView ; ajoute-les à tes favoris depuis leur page.</p>
+<ul>
+<li><a href="https://www.tradingview.com/script/11rnSkIL-DR-IDR-VWAP-FVG/" rel="noopener" target="_blank">DR / IDR / VWAP / FVG</a> : les VWAP daily, weekly et monthly avec leurs zones, le DR, et les FVG.</li>
+<li><a href="https://www.tradingview.com/script/m4oN87Ur-VWAP-triple/" rel="noopener" target="_blank">VWAP triple</a> : trois VWAP (séance, semaine, mois), chacune avec ses écarts-types.</li>
+<li><a href="https://www.tradingview.com/script/2KPQ4YbO-VP-Daily-Footprint/" rel="noopener" target="_blank">VP Daily Footprint</a> : le volume profile de la veille (POC, VAH, VAL, HVN, LVN), prolongé sur la journée. Mieux avec Premium.</li>
+<li><a href="https://www.tradingview.com/script/MJ9s9BxB-Volume-Profile-Levels/" rel="noopener" target="_blank">Volume Profile Levels</a> : les niveaux des profils de la semaine et du mois précédents. Mieux avec Premium.</li>
+<li><a href="https://www.tradingview.com/script/C0WsNsTj-Composite-Volume-Profile/" rel="noopener" target="_blank">Composite Volume Profile</a> : le profil de toute l'année en cours.</li>
+<li><a href="https://www.tradingview.com/script/C9uHSGvw-Delta-Profile-Daily/" rel="noopener" target="_blank">Delta Profile Daily</a> : la répartition du delta par niveau de prix. Premium nécessaire.</li>
+<li><a href="https://www.tradingview.com/script/kuRlS66e-TPO-Daily-Electronic-v2/" rel="noopener" target="_blank">TPO Daily Electronic v2</a> : le profil TPO (market profile), en daily ou en weekly.</li>
+<li><a href="https://www.tradingview.com/script/gz2WLAZm-Niveaux-many/" rel="noopener" target="_blank">Niveaux many</a> : niveaux de liquidité et points pivots.</li>
+<li><a href="https://www.tradingview.com/script/iVSxDoHs-SMC-Choch-many/" rel="noopener" target="_blank">SMC CHoCH many</a> : les changements de structure (CHoCH).</li>
+</ul>
 <h2>Merci</h2>
 <p>Merci de ta confiance.</p>
 <p>C'est déjà une première très bonne chose d'avoir fini tout ça ; tu verras que tu seras sûrement un des rares. Tu as lu ce que la plupart des gens ne liront jamais : ils veulent des signaux, pas des mécanismes ni de la compréhension.</p>
@@ -112,9 +123,9 @@ Pose-moi des questions plutôt que de deviner.</code><button type="button" class
 <p>J'espère que ça t'a aidé.</p>
 <p><strong>Pour me soutenir :</strong></p>
 <ul>
-<li><strong>Le mentorat, 70 € par mois.</strong> Un suivi écrit sur le Discord : tu postes tes graphiques et tes questions, je te corrige une étape à la fois, sur ton process, pas sur le mien.</li>
-<li><strong>Des petits outils.</strong> Je pense vendre des morceaux de Jarvis et de mes projets, si ça peut intéresser : l'indicateur d'orderflow (les gros acheteurs et vendeurs en bulles, les signaux d'absorption), le brief macro du matin (ce qui a changé, ce que le marché attendait), et l'architecture du second cerveau (un vault Obsidian rangé pour que l'IA retrouve tes notes, tes trades et tes décisions). Dis-moi sur le Discord lequel t'intéresse : je commencerai par le plus demandé.</li>
-<li><strong>Et surtout, bientôt : Learning.</strong> Un projet pour optimiser l'apprentissage. Cette ressource te prendra peut-être du temps à digérer, à intégrer dans ta mémoire ; ça dépendra de plein de facteurs. Learning part d'une idée simple : on retient ce qu'on reconstruit soi-même, pas ce qu'on relit. Tu lis, tu fermes, tu écris ce que tu as compris ; ensuite seulement, il te montre ce qui manque et t'interroge pour que ça reste. Tu retiens mieux et plus vite : tu gagnes du temps, de l'énergie et de la connaissance. L'annonce se fera sur le Discord.</li>
+<li><strong>Le mentorat, 70 € par mois.</strong> Tous les détails sur le Discord.</li>
+<li><strong>Des petits outils.</strong> Je pense vendre des morceaux de Jarvis et de mes projets, si ça peut intéresser : les codes sources de mes indicateurs, le brief macro du matin (ce qui a changé, ce que le marché attendait), et l'architecture du second cerveau (un vault Obsidian rangé pour que l'IA retrouve tes notes, tes trades et tes décisions). Dis-moi sur le Discord lequel t'intéresse : je commencerai par le plus demandé.</li>
+<li><strong>Et surtout, bientôt : un projet pour optimiser l'apprentissage.</strong> Cette ressource te prendra peut-être du temps à digérer, à intégrer dans ta mémoire ; ça dépendra de plein de facteurs. Avec ce projet, tu retiendras mieux et plus vite : tu gagnes du temps, de l'énergie et de la connaissance. L'annonce se fera sur le Discord.</li>
 </ul>
 <h2 id="sources">Sources</h2>
 <p><strong>Partie 1 — l'IA</strong></p>
@@ -162,7 +173,7 @@ Pose-moi des questions plutôt que de deviner.</code><button type="button" class
 <ul>
 <li>Parquet du Chicago Board of Trade, 1973 — U.S. Department of Agriculture / National Archives, domaine public, via Wikimedia Commons.</li>
 <li>Bourse de Francfort — Thomas Richter (THOMAS~commonswiki), modifiée par aka, licence CC BY-SA 3.0, via Wikimedia Commons.</li>
-<li>Graphiques GC, CL et 6E : captures personnelles. Schémas et animations : faits pour cette ressource.</li>
+<li>Graphiques GC, CL, 6E et ES : captures personnelles. Schémas et animations : faits pour cette ressource.</li>
 </ul><div class="pager"><a href="5.html">← Partie précédente</a><span></span></div></main><footer><a href="6.html#sources">Sources et crédits</a></footer><script src="anim.js" defer></script><script>
 document.querySelectorAll('.copy-code').forEach(button => {
   button.addEventListener('click', async () => {
